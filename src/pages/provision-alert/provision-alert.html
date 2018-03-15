@@ -1,0 +1,32 @@
+<!-- <ion-content class="content">
+
+  <div class='select' (tap)="present($event)">
+    <ul>
+          <li *ngFor='let item of store' (click)='giveData(item)'><span>{{item.storename}}</span><i>{{item.distance}}</i></li>
+        </ul>
+    </div>
+</ion-content> -->
+<ion-content class="content" (tap)="present($event)">
+  <ion-scroll scrollY="true" #scroll>
+    <ion-list no-lines class="good-list">
+      <div class='select'>
+        <ul>
+          <li *ngFor='let item of store' (click)='giveData(item)'>
+            <span>{{item.storename}}</span>
+            <i>{{item.distance}}</i>
+          </li>
+        </ul>
+      </div>
+    </ion-list>
+  </ion-scroll>
+</ion-content>
+
+<!--<ion-content>
+  <ion-row>
+    <ion-item no-lines>
+      <ion-scroll scrollX="true">
+        
+      </ion-scroll>
+    </ion-item>
+  </ion-row>
+</ion-content>-->

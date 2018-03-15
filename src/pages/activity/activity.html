@@ -1,0 +1,237 @@
+<!--
+  Generated template for the ActivityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>精品年货</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="ion_contant">
+    <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher> -->
+  <!-- <div class="contant">
+    <div class="neck">
+      <img src='assets/img/change__imge@2x.png'>
+    </div>
+    <div (click)='goturn()'>
+      <p class="goturn">
+      <img src='assets/img/button_choujiang@2x_66.png'>
+      </p >
+      </div>
+    <div class="border">
+      <p>
+        <img src='assets/img/title_imge_1@2x.png'>
+      </p>
+    </div>
+
+    <div class="main">
+      <!-- <div class="P-item">
+        <ul>
+          <li>
+            <img src='http://c.diancall.com/pipes/img/goods_900/643465orocg1pi60aljaql11fl.jpg'>
+          </li>
+          <li>
+              <img src='http://c.diancall.com/pipes/img/goods_900/16c7l9e4v4v17hae3na4iu15m0.jpg'>
+          </li>
+        </ul>
+
+        <p class='group'>
+          <span class="groupName">美大厨房超值套餐</span>
+          <span class="groupPrice"> 原价:<span class="yuanjia">￥17800</span></span>
+        </p>
+
+        <p class='groupClass'>
+          <span>美大飞天1301集成灶+橱柜 </span>
+          <span> 家装价￥
+            <span class="jiazhuang_group jiazhuang">1????</span>
+          </span>
+        </p>
+      </div> 
+      <div class="P-item" (click)="goDiancall('group1')">
+        <ul>
+          <li>
+            <img src='http://c.diancall.com/pipes/img/goods_900/643465orocg1pi60aljaql11fl.jpg'>
+          </li>
+          <li>
+            <img src='http://c.diancall.com/pipes/img/goods_900/16c7l9e4v4v17hae3na4iu15m0.jpg'>
+          </li>
+        </ul>
+        <p class='group'>
+          <span class="groupName">美大厨房超值套餐</span>
+          <span class="groupPrice"> 原价:
+            <span class="yuanjia">￥17800</span>
+          </span>
+        </p>
+        <p class='groupClass'>
+          <span class="addgroup">买美大时尚之星集成灶送3米配套橱柜！</span>
+          <span class="diancallprice"> 家装价￥
+            <span class="jiazhuang_group jiazhuang">14500</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="P-item" (click)="goDiancall('group2')">
+        <ul>
+          <li>
+            <img src='http://c.diancall.com/pipes/img/goods_900/63r6sjtv96nnp1eucaap7pjpgt.jpg'>
+          </li>
+          <li>
+            <img src='http://c.diancall.com/pipes/img/goods_900/33dru6pqg1l149gmpb62mvt2ss.jpg'>
+          </li>
+        </ul>
+        <p class='group'>
+          <span class="groupName">宝仕龙吊顶万家灯饰联合大放价套餐</span>
+          <span class="groupPrice"> 原价:
+            <span class="yuanjia">￥2455</span>
+          </span>
+        </p>
+        <p class='groupClass'>
+          <span class="addgroup">宝仕龙4㎡流金岁月吊顶+万家灯饰六头欧式餐厅吊灯</span>
+          <span class="diancallprice"> 家装价￥
+            <span class="jiazhuang_group jiazhuang">987</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="P-item" (click)="goDiancall(type='group3')">
+        <ul>
+        <li>
+        <img src='http://c.diancall.com/pipes/img/goods_900/3f6knp4ekgghg6aajid0q3g03r.jpg'>
+        </li>
+        <li>
+        <img src='http://c.diancall.com/pipes/img/goods_900/4rpml76da6kk5c6a77ommc6c6j.jpg'>
+        </li>
+        <li>
+        <img src='http://c.diancall.com/pipes/img/goods_900/3akl6efte6j3hpjdvd991v6g3f.jpg'>
+        </li>
+        <li>
+        <img src='http://c.diancall.com/pipes/img/goods_900/0s3qmt85663trrflhee37pciue.jpg'>
+        </li>
+        </ul>
+        <p class='group'>
+        <span class="groupName">申鹭达卫浴超值套餐</span>
+        <span class="groupPrice"> 原价:
+        <span class="yuanjia">￥8419</span>
+        </span>
+        </p >
+        <p class='groupClass'>
+        <span class="addgroup">浴室柜+马桶+水龙头+排水盘</span>
+        <span class="diancallprice"> 家装价￥
+        <span class="jiazhuang_group jiazhuang">2999</span>
+        </span>
+        </p >
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p>
+          <img src='assets/img/title_imge_2@2x.png'>
+        </p>
+  
+        <div class="img-box">
+  
+          <ion-grid class="hotgoods">
+            <ion-row *ngFor='let item of pinpaiarr'>
+              <ion-col class="col hotgoods-col" col-3 *ngFor='let items of item' (click)='gostores(items.storeid)'>
+                  <img [src]='items.storeimgs' class="pinpaiimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+              </ion-col>
+            </ion-row>
+  
+          </ion-grid>
+          <p class="brand">
+              <img class="pinpaiimg" [src]='xunwei' (click)='gostores(items="25001861")'>
+              <img class="pinpaiimg" [src]='huanan' (click)='gostores(items="25001862")'>
+          </p>
+        </div>
+      </div>
+     <div class="footer">
+      <p>
+        <img src='assets/img/title_imge_3@2x.png'>
+      </p>
+      <ion-grid class="hotgoods">
+        <ion-row *ngFor='let item of jiazhuang'>
+          <ion-col class="col hotgoods-col" col-6 *ngFor='let items of item' (click)='goGoods(items)'>
+            <div class="hotgoodsinfo">
+              <img [src]='items.goodsimg' class="hotgoodimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+              <div class="info">
+                <p class="thisGoods">{{items.goodsname}}</p>
+                <p class="hotprice">
+                  <span class="saleprice">原价：￥
+                    <span class="yuanjia">{{items.marketprice}}</span>
+                  </span>
+                  <span class="preprice">金铺特卖价：￥
+                    <span class="jiazhuang">{{items.sellprice}}</span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </ion-col>
+          <div class="footer" *ngIf='footerShow'>
+            <p>
+              <img src='assets/img/title_imge_3@2x.png'>
+            </p>
+            <ion-grid class="hotgoods">
+              <ion-row *ngFor='let item of jiazhuang'>
+                <ion-col class="col hotgoods-col" col-6 *ngFor='let items of item' (click)='goGoods(items)'>
+                  <div class="hotgoodsinfo">
+                    <img [src]='items.goodsimg' class="hotgoodimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+                    <div class="info">
+                       <p class="hotgoodname">{{items.goodsname}}</p>
+                      <p class="thisGoods">{{items.goodsname}}</p>
+                      <p class="hotprice">
+                        <span class="saleprice">原价：￥
+                          <span class="yuanjia">{{items.marketprice}}</span>
+                        </span>
+                        <span class="preprice">金铺特卖价：￥
+                          <span class="jiazhuang">{{items.sellprice}}</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div> -->
+    <div class="bottom_">
+      <p>
+        <img src='assets/img/title_imge_4@2x.png'>
+      </p>
+
+      <ion-grid class="hotgoods">
+        <ion-row *ngFor='let item of jinping'>
+          <ion-col class="col hotgoods-col" col-6 *ngFor='let items of item' (click)='goGoods(items)'>
+            <div class="hotgoodsinfo">
+              <img [src]='items.goodsimg' class="hotgoodimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+              <div class="info">
+                <!-- <p class="hotgoodname">{{items.goodsname}}</p> -->
+                <p class="thisGoods">{{items.goodsname}}</p>
+                <p class="hotprice">
+                  <span class="saleprice">原价：￥
+                    <span class="yuanjia" *ngIf='dataShowFn(items.marketprice)'>{{items.marketprice}}</span>
+                  </span>
+                  <span class="preprice">特卖价：￥
+                    <span class="jiazhuang">{{items.sellprice}}</span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <div class="more">已到底部</div>
+
+
+</ion-content>

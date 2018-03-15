@@ -1,0 +1,101 @@
+page-payment {
+    .scroll-content{
+        background: #efeff4;
+    }
+    .dingdan_box{
+        background: #fff;
+        position: relative;
+        margin-top: 15px;
+    }
+    .dingdan_box p{
+        height: 40px;
+        line-height: 40px;
+        padding-left: 15px;
+        font-size: 14px;
+    }
+    .shouru{
+        float: right;
+        margin-right: 20px;
+        color:#f15a4a;
+    }
+    .right_span{
+        position: absolute;
+        width: 20px;
+        height: 81px;
+        padding: 20px 0;
+        font-size: 13px;
+        background: #f15a4a;
+        color: #fff;
+        line-height: 20px;
+        text-align: center;
+        right: 0;
+        top: 0;
+    }
+    .info_hr{
+        height: 1px;
+        background: #efeff4;
+        width:92%;
+        margin:0 auto;
+    }
+    .goods_mingxi{
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #333;
+        padding-left: 15px;
+        background: #fff;
+        margin-top: 6px;
+    }
+    .list1{
+        background: #fff;
+    }
+    .setting-content{
+        font-size: 14px;
+        color: #333;
+        // 
+    }
+    ion-checkbox{
+        z-index: 10000;
+    }
+    .item-inner{
+        border: none !important
+    }
+   .info_hr2{
+       width: 85%;
+       height: 1px;
+       float: right;
+       padding: 0 ;
+       margin: 0;
+   }
+    .setting-img{
+        width: 30px !important;
+    }
+    .ion-ios-checkmark-circle:before{
+        color: #1e82d2;
+    }
+    .list-ios > .item-block:first-child{
+        border-top: 1px solid #eaeaea;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom: none!important;
+    }
+    .tab_p2{
+        margin: 15px 0 0 0 ;
+    }
+    .tab_p1{
+        padding: 13px 0 13px 16px;
+    }
+    .tab_p1 p{
+        height: 18px;
+        line-height: 18px;
+        padding: 0;
+        margin: 0 0 11px 0;
+    }
+    .checkbox-ios .checkbox-checked{
+        background: #fb6d07;
+        border-color: #fb6d07;
+    }
+    .login .button-inner{
+        color: #fff;
+    }
+}

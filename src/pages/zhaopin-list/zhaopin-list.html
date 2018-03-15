@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>招聘信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="toDetails(item)" *ngFor="let item of listData.rows">
+      <p class="msg-title">{{item.storeInfo.storename}}</p>
+      <p class="msg-content">
+        <span>诚聘</span>&nbsp;&nbsp;&nbsp;
+        <span>{{item.jobname}}</span>&nbsp;&nbsp;&nbsp;
+        <span>{{item.count+"人"}}</span>
+        </p>
+      <ion-note item-right >
+        <div class="item-distance">{{item.storeInfo.distanceShow}}</div>
+        <div class="item-salery">
+          <span>{{item.saleryshow}}</span><span *ngIf="item.isdeduct == 1" >+提成</span>
+        </div>
+      </ion-note>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray" class="my-arrow"></ion-icon>
+
+    </ion-item>
+  </ion-list>
+  <div class="Xtishi" [hidden]="xiSh">暂无消息!</div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

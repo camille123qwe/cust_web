@@ -1,0 +1,175 @@
+page-sign-in {
+    .content{
+        //渐变
+        background: -webkit-linear-gradient(#ff6f19, #ffa539); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(#ff6f19, #ffa539); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(#ff6f19, #ffa539); /* Firefox 3.6 - 15 */
+        background: linear-gradient(#ff6f19, #ffa539); /* 标准的语法 */
+        // background: #ff6f19;
+    }
+    .btns{
+        font-size: 15px;
+        color: #8b8b8b;
+    }
+    .sign-hrad{
+        width: 100%;
+        height: 115px;
+        overflow: hidden;
+        background: url(../assets/img/bg_imge_tuan@2x.png)no-repeat center;
+        background-size: 100% 100%;
+    }
+    p{
+        margin: 0 !important;
+        padding:  0 !important;
+    }
+    .go-choujiang{
+        margin: 0 !important;
+        padding: 0 0 0 15px !important;
+        width: 41%;
+        height: 31px;
+        background: #f8b551;
+        color: #fff;
+        font-size: 14px;
+        line-height: 31px;
+        margin-top: 20px !important;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .sign-contant{
+        margin-top: 20px;
+        padding-left: 25px;
+    }
+    .sign{
+        font-size: 18px;
+        color: #fff;
+        float: left;
+        .days{
+            display: inline-block;
+            padding: 0 10px;
+            font-size: 50px;
+            color: #fff;
+        }
+    }
+    .bar-button-ios[icon-only]{
+        width: 50px!important;
+    }
+    .qiandao{
+        float: right;
+        padding: 8px 23px !important;
+        background: #fff;
+        color: #f19149;
+        border-radius: 5px;
+        margin-right: 12px !important;
+        margin-top: 20px !important;
+    }
+    .jihui{
+        // margin-top: 22px !important;
+         padding-left: 25px !important;
+        color: #fff;
+        font-size: 14px;
+        .i-have{
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+    .home-grid p{
+        margin: 12px 0 !important;
+        
+    }
+    .home-grid{
+        background: #fff;
+        width:94%;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    .p_col{
+        text-align: center;
+    }
+    .p_col p img{
+        width: 22px;
+        height: 22px;
+    }
+    .col{
+        padding: 0 !important;
+    }
+
+    .share{
+        height: 30px;
+        line-height: 30px;
+        width: 94%;
+        margin: 0 auto;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 21px;
+    }
+    .share span{
+        display: inline-block;
+        float: right;
+        color: #8b8b8b;
+        border-bottom: 1px solid #8b8b8b;
+        height: 25px;
+    }
+    .ion_list{
+        width: 94%;
+        margin: 0 auto 32px auto;
+        border:none !important;
+        border-radius: 10px !important
+    }
+    .item{
+        margin-top: 5px;
+        border-radius: 5px;
+        position: relative;
+    }
+    .fenxiang{
+        padding: 0;
+        margin: 0;
+        position:absolute;
+        right: 17px;
+        top: 18px;
+        height: 30px;
+        line-height: 30px;
+        // padding:0 10px;
+        width: 57px;
+        text-align: center;
+        color: #fff;
+        background: #fb6d07;
+        border-radius: 5px;
+
+    }
+    .item-store{
+        font-size: 14px;
+        color: #555;
+    }
+    .item-gift{
+        display: inline-block;
+        padding: 0 15px 0 5px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 15px;
+        color: #fb6d07;
+        background: #fdefd9;
+        font-size: 13px;        
+    }
+    .item-gift span{
+overflow: hidden;
+    }
+    .item-gift span img {
+        float: left;
+        width: 16px;
+        margin-top: 4px;
+    }
+    .list-ios .item-block .item-inner{
+        border: none !important;
+    }
+
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}

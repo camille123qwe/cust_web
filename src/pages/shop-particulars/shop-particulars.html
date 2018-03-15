@@ -1,0 +1,90 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle (tap)="Back()" >
+  	 <ion-icon ios="ios-arrow-back" md="ios-arrow-back"  class="orange"></ion-icon>
+  	</button>
+    <ion-title>商品详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+      <!--<ion-icon src ="assets/img/icon_shezhi.png"></ion-icon>-->
+      <img [src] ="FxIMg" class="img-header"/>
+    </button>
+  </ion-buttons>
+  
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content>
+  <!--<div class="title_banner">
+    <ion-slides pager=true>
+      <ion-slide *ngFor="let item of shangpingImg">
+        <img [src]="goodsface_900+item" class="title_banner" onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+      </ion-slide>
+    </ion-slides>
+  </div>-->
+  <p *ngFor="let item of shangpingImg">
+    <img  [src]="goodsface_900+item" class="title_banner" onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+  </p>
+  
+<div class="goods-name" >{{GoodsName}}      <span *ngIf='danwei'>[{{goodsList.unit}}]</span></div>
+<div class="goods-cost">
+  <p class="jiage">
+     <span class="yuyue">店呼预约价</span>
+    <span class="new-cost">{{'￥ '+goodsList.sellprice}}</span> 
+    <span class="old-cost" [hidden]="pric">{{'￥ '+goodsList.marketprice}}</span> 
+  </p>
+  <!--<p>
+    <span class="menshi">门市价</span>
+    
+  </p>-->
+ </div>
+
+ <ion-toolbar class="shop-toolbar" [hidden]="hPriv">
+    <span class="baok">促销活动</span>
+</ion-toolbar>
+
+<!--<ion-item *ngFor="let item of Priv">
+  <ion-label  >
+     <p class="sale-header">{{item.quantitle}}</p>
+     <p class="item-right-font">{{"截止日期 : "+item.validday}}</p>
+  </ion-label>
+  <ion-select [(ngModel)]="gender">
+    <ion-option><img [src]="goodsface_300+goodsList.goodsface"></ion-option>
+    <ion-option>导购扫描二维码获取此优惠</ion-option>
+  </ion-select>
+</ion-item>-->
+<ion-list class="list-no-margin fenxiangzengsong" *ngIf="zengsong">
+    <ion-item class="list_margin_item">
+      <p class="sale-header fxlist">分享赠送  <span class="zensong" *ngIf=fenxiang1>{{fenxiangzengnsong.cashvalue+'元代金券'}}</span> <span class="zensong" *ngIf='fenxiang2'>{{fenxiangzengnsong.voicetimes+'分钟通话'}}</span> <span class="zensong" *ngIf='fenxiang3'>{{fenxiangzengnsong.fluxPackage.ydfluxkbs+'M流量'}}</span></p>
+      <p class="item-right-font validday" *ngIf='zengsongmoshi'>好友通过分享连接成为会员即可获得赠送</p>
+      <p class="item-right-font validday" *ngIf ='!zengsongmoshi'>{{'好友初次到店消费满'+(fenxiangzengnsong.costmoneyneed/100)+'元即可获得赠送'}}</p>
+      <p class="item-right-font validday">{{fenxiangzengnsong.qishiriqi}} </p>
+    </ion-item>
+</ion-list>
+
+<ion-list *ngFor="let item of Privlist">
+  <ion-item class="ion_item" *ngIf='item.youxiaoriqi'>
+        <p class="sale-header">{{item.quantitle}}</p>
+        <p class="item-right-font riqi">{{item.validday}}</p>
+        <span class="hov" (click)="Preferential(ShopInfo,item)" *ngIf='item.kaishi'>获取优惠</span>
+        <span class="hov chakan" (click)="Preferential(ShopInfo,item)" *ngIf='item.weikaishi'>查看详情</span>
+  </ion-item>
+</ion-list>
+<ion-icon class="genduoyouhui" ios="md-arrow-dropdown" md="md-arrow-dropdown" (click)="huoqugenduo()" *ngIf='cang'></ion-icon>
+<!--<div class="genduoyouhui" (click)="huoqugenduo()" *ngIf='cang'>跟多优惠</div>-->
+
+<ion-toolbar class="shop-toolbar" *ngIf='tedian'>
+    <span class="baok">商品描述</span>
+</ion-toolbar>
+<div class="goods-description" *ngIf='tedian'>{{goodsList.goodsdesc}}</div>
+<!--<h2 class="item-address" *ngIf='jieshao'>{{goodsList.goodsdesc}}</h2>-->
+<ion-toolbar class="shop-toolbar" *ngIf='jieshao'>
+    <span class="baok">商品详情</span>
+</ion-toolbar>
+<div class="goods-description" [innerHTML]='aloneDetail'></div>
+
+</ion-content>

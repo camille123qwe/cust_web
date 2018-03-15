@@ -1,0 +1,39 @@
+page-message {
+ .tab_header{
+    padding:10px 0 10px 0;
+
+  }
+ion-note {
+    font-size: 14px;
+  }
+  .badge-unread[item-left]{
+    width:14px;
+    height: 14px;
+    align-self: flex-start;
+    margin-top: 15px;
+  }
+  .Xtishi{margin-top: 30%;
+    text-align: center;
+    font-size: 21px;
+    }
+    .msg-title{
+        display: block;
+        font-size: 15px;
+        color: #333333;
+        text-decoration: none; 
+        white-space:normal;
+    }
+    .msg-content{
+        display: block;
+        font-size: 14px;
+        color: #888888;
+        text-decoration: none; 
+        white-space:normal;
+        margin-top: 10px;
+        width: 100%;
+        line-height: 150%;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+  }
+}

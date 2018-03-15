@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      限时优惠
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+       <img [src] ="FxIMg" class="img-header"/>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+  <div class="title_banner">
+    <!--<ion-slides pager=true>-->
+      <p *ngFor='let item of StoreImg'>
+        <img [src]="goodsface_900+item" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+      </p>
+    <!--</ion-slides>-->
+  </div>
+  <div class="shop clearfix">
+    <p class="shop_header">
+      {{goodsName}}<span *ngIf='ngshow(unit)'>[{{unit}}]</span>
+    </p>
+    <div>
+      <p class="qiangquan">
+        限时秒杀<span class="qianggou">{{'￥'+sellprice}}</span><span class="shichang">{{'￥'+marketprice}}</span>
+        <span class="kuaiqiang" *ngIf='rushshow'><i [ngStyle]='jindu'></i></span>
+        <span class="baifenbi" *ngIf='rushshow'>{{baifenbi}}</span>
+      </p>
+      <p [ngClass]="qiangClass" *ngIf='rushshow' (click)="maxdistance()">{{qiangTxt}}</p>
+      <!--<p class="qiang err" *ngIf='!rushshow'>{{qiangTxt}}</p>-->
+    </div>
+  </div>
+  <div class="">
+    <p class="tishi">
+        <span class="shijian">{{limttime}}</span> <span class="riqi">取货时间:{{start_stop}}</span>
+        
+    </p>
+  </div>
+  <div>
+    <p class="menidan">
+     <span class="dianpu">已选提货商铺</span><span class="fenge">|</span><span class="storeShop">{{storeName}}</span>
+       <span class="juli">{{distance}}</span>
+    </p>
+
+    <p class="weizhi" *ngIf="more">
+      <span  class="dinwei"><img  src="assets/img/icon_dizhi@2x.png" alt="*"/>&nbsp;&nbsp;店铺地址</span><span class="fenge">|</span><span class="dizhi">{{storeaddr}}</span>
+    </p>
+    
+    <p class="yinyeshijian" *ngIf="more">
+      <span class="sp-times">
+        <img src="assets/img/icon_yingyeshijian@2x.png" alt="*" />
+        <i>{{openTime}}-{{closeTime}}</i>
+      </span>
+
+      <!--<span class="sp-call" *ngIf='retAlert(phonenum)'>
+        <img src="assets/img/icon_shangpudianhua@2x.png" alt="*" />
+        <a [href]="tel_str"></a> 
+      </span>   -->
+      <span class="sp-call" *ngIf='retAlert(phonenum)'>
+      <img src="assets/img/icon_shangpudianhua@2x.png" alt="*" />
+      <a [href]="tel_str" id="xs_tel"></a>
+    </span> 
+    </p>
+    <p class="p_end" *ngIf="more" (click)="provision()">查看所有支持提货的商铺</p>
+    <ion-icon class="genduoyouhui" ios="md-arrow-dropdown" md="md-arrow-dropdown" (click)="genduo()" *ngIf='!more'></ion-icon>
+  </div>
+  <ion-toolbar class="shop-toolbar">
+    <span start class="left_span">产品信息</span>
+  </ion-toolbar>
+  <div class="goods-description" [innerHTML]='goodsdesc'>
+    <!--{{goodsdesc}}-->
+  </div>
+</ion-content>

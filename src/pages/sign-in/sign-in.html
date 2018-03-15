@@ -1,0 +1,64 @@
+<!--
+  Generated template for the SignInPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title (tap)='mycdrcount()'>赚流量赢话费</ion-title>
+      <ion-buttons end>
+        <button class="btns" ion-button icon-only (tap)="presentPrompt()">
+          奖励规则
+      </button>
+    </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="content">
+    <div class="sign-hrad">
+      <!-- <div class="go-choujiang" (tap)='goTurntable()'>点击参加大抽奖   <ion-icon name="arrow-forward"></ion-icon></div> -->
+      <div class="sign-contant">
+        <p class="sign">
+          累计签到<span class="days">{{days}}</span>天
+        </p>
+        <p class="qiandao" (tap)='qiandao()'>
+          签到
+        </p>
+      </div>
+      <div class="clearfix"></div>
+      <!-- <p class="jihui">本期抽奖机会 <span class="i-have">{{jihui}}</span>次</p> -->
+    </div>
+  
+  
+    <ion-grid class="home-grid">
+      <ion-row *ngFor='let item of grid'>
+        <ion-col class="p_col" *ngFor='let items of item'>
+          <p> <img [src]="items.src_img" /> </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <!-- <div class="share" >
+      *ngIf='shareShw' 
+      分享赠送 <span (tap)="presentPrompt()">赠送规则</span>
+    </div> -->
+  
+    <ion-list class="ion_list" *ngIf='shareShw'>
+      <ion-item class="item" *ngFor='let item of shearArr'>
+        <div class="item-store">{{item.storeInfo.storename}} <span *ngIf='distanceShow'>{{'('+item.storeInfo.distance+')'}}</span></div>
+       <span class="item-gift"><span><img [src]="money_img" /></span>&nbsp;{{item.shreaGift}}</span>
+       <button class="fenxiang" (click)='shera(item.storeInfo)'>分享</button>
+      </ion-item>
+  
+      <!-- <ion-item class="item" >
+        <div class="item-store">军坤数码沙河店（500m）</div>
+        <span class="item-gift"><span><img [src]="money_img" /></span>&nbsp;&nbsp;送300分钟通话</span>
+        <button class="fenxiang">分享</button>
+      </ion-item> -->
+    </ion-list>
+  
+  </ion-content>

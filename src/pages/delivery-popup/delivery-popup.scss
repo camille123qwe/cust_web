@@ -1,0 +1,287 @@
+page-delivery-popup {
+    opacity: 0;
+    .whole-page{
+            width:100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+    }
+    .background-title{
+    height: 40%;
+    width: 100%;
+    }
+    .modal{
+            width: 100%; 
+            height: 60%;
+            background: #fff;
+            margin: 0 auto;
+            opacity: 1 !important;
+            // margin-top: 94px;
+            // z-index: 1000;
+            padding-top: 1px;
+            overflow-y: scroll;
+            // padding-bottom: 50px; 
+            position: absolute;
+            // bottom: 0;
+    }
+    .footer-call-madal{
+        border-top: 1px solid #c9c9c9;
+        bottom: 0px;
+        text-align: center !important;
+        padding-top: 14px !important;
+        background: #fb6d07;
+        color: #fff;
+        font-size: 15px;
+        // position: fixed;
+        // bottom: 0;
+        height: 50px;
+        width: 100%;
+    }
+    .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+        height: 0px !important;
+    }
+    .goods-item{
+        // margin: 0 13px;
+        padding: 0;
+        border-bottom:1px solid #c9c9c9;
+        min-height: 86px;
+    }
+    .small-img{
+        width: 113px;
+        margin-left: 8px !important;
+    }
+    
+    .item-inner{
+          border-bottom: 0px !important;
+          
+      }
+    .price{
+       color: #fb6d07 ;        
+       font-size: 15px;
+    }
+    .limit{
+       color: #666666 ;        
+       font-size: 14px;
+       margin-bottom: 7px;
+    }
+    .selected{
+           color: #333333 ;        
+       font-size: 14px;
+    }
+    .selected span{
+        margin-left: 5px;
+    }
+    .Specifications{
+        // overflow: scroll;
+        margin-left: 13px;
+        border-bottom:1px solid #c9c9c9;
+        
+    }
+    .spec-title{
+        margin: 10px 0;
+        color: #333333 ;        
+       font-size: 14px;
+    }
+    .spec{
+        text-align: center;
+        background: #f8f8f8;
+        color: #333333;
+        font-size: 12px;
+        border-radius: 5px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+    .spec-selected{
+        text-align: center;
+        background: #fb6d07;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 5px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        height: 30px;
+        
+    }
+    
+    .spec-row{
+        margin-right: 15px;
+    }
+     .spec-row > ion-col:last-child{
+    margin-right: 0px;
+     }
+    .count-title{
+        color: #333333;        
+       font-size: 14px;
+    
+       
+    }
+        .cancle{
+            position: absolute;
+            right: 5px;
+            padding: 5px;
+            top: 5px;
+        }
+    .count{
+        position: absolute;
+        top: 17px;
+        right: 17px;
+        display: inline;
+    }
+    .count input{
+        text-align: center;
+        width: 38px;
+        background: #f5f5f5;
+        border: 0px;
+        padding:8px 10px; 
+        
+    }
+    .count span{
+        background: #f5f5f5;   
+        padding:8px  10px; 
+        color: #999999;
+    }
+    .count-block{
+       padding:  24px 0px;
+       margin-left :13px;
+        position: relative;
+        border-bottom:1px solid #c9c9c9;
+    }
+    .text-input-ios{
+        margin: 0!important;
+    }
+    ion-input{
+        display: inline!important;
+    }
+    // 《后期复用别删》
+    // .content{
+    //     width:100%;
+    //     height: 100%;
+    //     background: rgba(0,0,0,0.4);
+    // }
+    // .mian{
+    //     width: 100%;
+    //     position: absolute;
+    //     bottom: 49px !important;
+    //     background: #fff;
+    //     overflow-y: scroll;
+    // }
+    // .content-header{
+    //     width: 100%;
+    //     height: 57px;
+    //     line-height: 57px;
+        
+    //     padding: 0 15px;
+    //     border-bottom: 1px solid #eaeaea;
+    //     .header-sp1{
+    //         display: inline-block;
+    //         height: 100%;
+    //         float: left;
+    //         color: #333;
+    //         font-size: 14px;
+    //     }
+    //     .header-sp2{
+    //         display: inline-block;
+    //         height: 100%;
+    //         float: right;
+    //         color: #fb6d07;
+    //         font-size: 14px;
+    //     }
+    // }
+    // ion-list{
+    //     width: 100%;
+    //     // height:38px;
+        
+    //     background: #fff;
+    //     padding: 0 15px;
+        
+        
+    //         .list-div p{
+    //             margin:0 !important;
+    //             padding: 0 !important;
+    //             display: inline-block;
+    //             height: 100%;
+    //             line-height: 38px;
+    //         }
+        
+        
+       
+       
+    //     .list-div{
+    //         width: 100%;
+    //         height:38px;
+    //         display: block;
+    //         background: #fff;
+    //         border-bottom: 1px solid #eaeaea;
+    //         margin: 5px 0;
+            
+    //          .goods{
+    //             width:50%;
+    //             float: left;
+    //             font-size: 12px;
+    //             color: #333;
+    //             overflow: hidden;
+    //             text-overflow:ellipsis;
+    //             white-space: nowrap;
+    //          }
+    //          @media screen and (max-device-width: 320px) {
+    //             .price{
+    //                 float: left;
+    //                 margin-left: 15px !important;
+    //                 font-size: 13px;
+    //                 color: #fb6b07;
+    //             }
+    //         }
+    //         @media screen and (min-device-width:321px) and (max-device-width:375px) {
+    //                 .price{
+    //                 float: left;
+    //                 margin-left: 25px !important;
+    //                 font-size: 13px;
+    //                 color: #fb6b07;
+    //             }
+    //         }
+    //         @media screen and (min-device-width:376px) {
+    //                 .price{
+    //                 float: left;
+    //                 margin-left: 25px !important;
+    //                 font-size: 13px;
+    //                 color: #fb6b07;
+    //             }
+    //         }
+            
+    //         .count{
+    //             top: 17px;
+    //             right: 17px;
+    //             display: inline;
+    //             float: right;
+    //         }
+    //         .count input{
+    //             text-align: center;
+    //             width: 20px;
+    //             height: 20px;
+    //             background: #f5f5f5;
+    //             border: 0px;
+                
+    //         }
+    //         .count span{
+    //             background: #f5f5f5;   
+    //             padding:0px  5px; 
+    //             color: #999999;
+    //         }
+    //     }
+    // }
+       
+             
+    // .list-ios {
+    //     margin:  0;
+    // } 
+    // ion-footer{
+    //     height: 49px;
+    //     width: 100%;
+    //     line-height: 49px;
+    //     text-align: center;
+    //     font-size: 15px;
+    //     background: #fb6d07;
+    //     color: #fff;
+    // }   
+    
+}

@@ -1,0 +1,133 @@
+page-login {
+.item-inner{
+  border: 0px !important;
+}
+@media (max-device-width:320px){
+  .btnVerify {
+    color: #ffffff;
+    background-color: #fb6d07;
+    font-size: 12px !important;
+    border-radius: 6px;
+    padding: 14px 5px !important;
+    margin: 0 !important;
+    
+}
+// .verify-label{
+//   margin: 0 !important;
+// }
+ion-input input{
+  margin: 0 !important;
+  width:100% !important;
+}
+.card{
+    border: 1.5px solid #c9c9c9;
+    border-radius: 10px;
+    margin: 0px 22px !important;
+    width: calc(100% - 44px) !important;
+    box-shadow:none !important;
+    overflow: hidden !important;
+  }
+  .disable-hover{
+      padding: 18px 15px !important;
+    }
+}
+
+.disable-hover{
+  padding: 18px 15px !important;
+}
+.password{
+  font-size: 12px !important;  
+}
+// .img-code{
+//   position: absolute;
+//   right: 10px;
+//   z-index: 1000;
+//   display: inherit;
+//   margin-top: 0px !important;
+// }
+// .img-code img{
+//   width: 70px;
+//   height: 37px;
+// }
+// .img-code ion-icon{
+//   padding: 5px;
+//   padding-left: 10px;
+//   // font-size: 15px;
+// }
+.list-ios > .item-block:last-child{
+  border: none!important;
+}
+.yzm_item{
+  width: 70%;
+  float: left;
+}
+.img-code{
+  width: 30%;
+  float: left;
+  padding-top: 10px;
+}
+.img-code img{
+  width: 70px;
+  height: 37px;
+  display: inline-block!important;
+}
+
+}
+.slogan{
+  text-align: center;
+}
+.logo{
+  width: 115px;
+  height: 115px;
+  margin-top:65px;
+}
+
+.slogan .hi{
+  font-size: 19px;
+  color: #fb6d07;
+  margin-top: 34px;
+}
+.card{
+  border: 1.5px solid #c9c9c9;
+  border-radius: 10px;
+  margin: 0px 33px !important;
+  width: calc(100% - 66px) !important;
+  box-shadow:none !important;
+  overflow: hidden !important;
+}
+.btnVerifyInable {
+    font-size: 14px !important;
+  }
+.input-has-value{
+    border-bottom: none !important;
+}
+.input-cover{
+  border: none!important;
+}
+.login{
+  padding:0px 43px;
+}
+.login button{
+  // width: 289px;
+  margin-top: 31px!important;
+  color: #ffffff;
+  background-color: #fb6d07;
+  border-radius: 10px;
+  font-size: 21px;
+}
+hr.hr-login{
+  height: 1px!important;
+  margin:0 8px;
+  clear: both;
+}
+#lost-psw{
+  padding:0 15px 15px 28px;
+  color:#858484;
+}
+#sign-up{
+  position: absolute;
+  right:0px;
+  // margin-right: 15px;
+  padding:0 43px 15px 15px;
+  color:#858484;
+}

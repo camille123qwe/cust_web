@@ -1,0 +1,255 @@
+page-my-coupon {
+    .description-bar{
+        height: 55px;
+        background-color: #efeff4;
+        text-align: center;
+    }
+    .btn-description{
+        color: #333;
+        background-color: #ffffff;
+        height: 29px;
+        width:260px;
+          margin-top:13px;
+        font-size: 15px;
+        border-radius: 6px;
+        width: 92%;
+        border:1px solid #c9c9c9;
+    }
+    .Lqun{
+         width: 92%;
+        height: 98px;
+        margin: 0 auto;
+        background:#fff;
+        border: 1px solid #ddd;
+       border-radius: 10px;
+       margin-top: 10px;
+       position: relative;
+       z-index: 100;
+    }
+    .Lqun h2{
+       font-size: 17px;
+       color: #333;
+       
+    }
+    .Lqun p{
+       font-size: 15px;
+       color: #666;
+    }
+    .Lqun_left{
+        width:80px;
+        float: left;
+        height: 100%;
+        text-align: center;
+        margin-left: 13px;
+    }
+    .Lqun_left span{
+        
+        display: block;
+        color:#fb6d07;
+        font-size: 18px !important;
+        margin-top: 26px;
+        margin-left: 4px;
+    }
+    .maney{
+       font-size: 14px !important;
+       width: 80px;
+  
+    }
+    .xianshi{
+      font-size: 14px !important;
+      height: 96 !important;
+      line-height: 96px !important;
+      margin: 0 !important;
+    }
+    .guoqi{
+        color: #666;
+    }
+    .p_1{
+          padding: 10px 0 0;
+          margin: 0 ;
+          font-size: 13px !important;
+        //   height: 36px;
+          color: #333 !important;
+          
+          overflow:hidden; 
+          text-overflow:ellipsis;
+          display:-webkit-box; 
+          -webkit-box-orient:vertical;
+          -webkit-line-clamp:2; 
+          
+    }
+    .p_2{
+        font-size: 14px;
+    }
+    .used {
+        margin: 0px !important;
+    }
+    .p_3{
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        padding-left: 18px;
+        background:#fb6d07;
+        color: #fff !important;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:10px;
+        font-size: 13px !important;
+    }
+    .store{
+      //   margin: 0;
+  //    width: 165px;p_3 
+        font-size: 15px !important;
+      //   margin-top: 10px;
+    }
+  //   .maney i{
+  //       font-size: 18px !important;
+  //       font-style:normal
+  //   }
+    .xianjin{
+        font-size: 15px !important; 
+        margin-top: 9px !important;
+    }
+   
+    .youxiaoquan_r{
+        height: 126px;
+    }
+    .Lqun_r{
+      position: relative;   
+      width: 92%;
+      overflow: hidden !important;
+      margin: 0 auto;
+      background:#fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-top: 10px;
+      height: 126px;  
+    }
+     .Lqun_right{
+        width: 60%;
+        float: left;
+        height: 100%;
+        margin-left: 13px;
+        border-left: 3px dashed #efeff4;
+        padding-left: 13px;
+  //    position: relative
+    }
+    .Lqun_left_r{
+         width:80px;
+        float: left;
+        height: 98px;
+        text-align: center;
+        margin-left: 13px;
+        
+    }
+  
+  
+    .Lqun_left_r span{
+        
+        display: block;
+        color:#666;
+        font-size: 18px !important;
+        margin-top: 16px;
+    }
+    
+    .Lqun_right_r{
+        width: 60%;
+        float: left;
+        height: 98px;
+      //   margin-left: 6px;
+        border-left: 3px dashed #efeff4;
+        padding-left: 6px; 
+    }
+    .Lqun_right_r span{
+        font-size: 14px;
+    }
+    .Lqun_right_r{
+        font-size: 16px;
+        color: #666;
+    }
+    .storename{
+        margin: 13px 0 8px 0 !important;
+        font-size: 17px;
+        
+    }
+    .cardid{
+        float: left;
+        width: 100%;
+        min-height: 20px;
+        background: #c9c9c9;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        line-height: 30px;
+        font-size: 15px;
+        color: #444;
+        padding-left: 18px;
+      //   text-align:center;
+    }
+    .list_p{
+        width: 100%;
+        height: 20px;
+        margin: 0;
+        padding: 0;
+        line-height: 20px
+    }
+    .list_p span{
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+    }
+    .ion-item{
+        padding: 10px;
+    }
+    .tab_header{
+        background:#ffffff !important;
+    }
+    .youxiaoquan{
+        margin: 0;
+        padding: 0;
+    }
+    .quan{
+        text-align: center;    
+        margin-top: 100px;
+    }
+    .privilege{
+        background:#efeff4 !important; 
+    }
+    .Switch{
+        margin-top: 10px;
+    }
+    
+  
+    .alert-wrapper{
+          margin-top: 120px;
+    }
+    .alert-ios-title-font-size{
+        font-size: 17px !important;
+    }
+    .alert-md-title-font-size{
+        font-size: 17px !important;
+    }
+    .use{
+        margin-top: 0px !important;
+    }
+    .Lqun_left_span{
+        color:#666 !important;
+    }
+   
+  }
+   .alert-title{
+        font-size: 17px !important;
+    }
+    .alert-ios .alert-wrapper{
+      //   position: absolute !important;
+      //   top: 220px !important;
+    }
+   .alertmodal{
+      // padding-top: 216px !important;
+    }
+  

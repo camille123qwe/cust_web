@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我要开店</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="slogan">
+    <img [src]="logoSrc" class="logo">
+    <p class="txt1">店呼商家版</p>
+    <p class="txt2">让线下门店生意更轻松</p>
+
+  </div>
+  <div class="details">
+    <p>● 5分钟完成开店入驻。</p>
+    <p>● 周边最大的免费广告平台，坐享千万潜在客流。</p>
+    <p>● 日发展门店会员过百，用户关注贵店、分享贵店朋友注册即成您的会员，还有平台豪礼相赠。</p>
+  </div>
+  <div class="download" >
+    <button ion-button block clear (click)="download()">下载店呼商家版</button>
+  </div>
+  <!--<div  class="ios-download" *ngIf="isIOS">
+    <a href="https://itunes.apple.com/cn/app/%E5%BA%97%E5%91%BC%E5%95%86%E5%AE%B6%E7%89%88/id1214778528?mt=8"  target="_blank">下载店呼商家版</a>
+  </div>-->
+
+</ion-content>

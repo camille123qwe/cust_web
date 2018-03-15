@@ -1,0 +1,98 @@
+<!--
+  Generated template for the DeliveryPopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content class="whole-page">
+    <div class="background-title" (tap)="present($event)"></div>
+    <ion-item class="goods-item">
+      <img [src]="goodsface_img900+goodsface" class="small-img" item-left onerror="javascript:this.src='assets/img/ba_gb_banner1@2x.png';"
+      />
+      <!-- <div class="cancle" (click)="cancel()">x</div> -->
+  
+      <!-- <div class="goods-header"> -->
+        <!-- <span class="price">¥ {{WholeInfo.wholesaleprice}}</span> -->
+        <!--<span class="limit">(每人限购数:3)</span>-->
+      <!-- </div> -->
+      <div class="selected">
+          &nbsp; &nbsp;可选规格：
+      </div>
+    </ion-item>
+    <div class="modal">
+      <div class="Specifications" *ngFor="let title of specTitles">
+        <div class="spec-title">{{title}}</div>
+        <ion-grid>
+          <ion-row center class="spec-row">
+            <ion-col (tap)="selectSpec(content)" class="spec" *ngFor="let content of specTitles" >
+              {{content}}
+            </ion-col>
+          </ion-row>
+  
+  
+        </ion-grid>
+      </div>
+  
+      <div class="count-block">
+        <p class="count-title">数量</p>
+        <p class="count">
+          <span (tap)='reduce()'>-</span>
+          <ion-input type="number" class="count-number" [(ngModel)]="count_number"></ion-input>
+  
+          <span (tap)='add()'>+</span>
+  
+        </p>
+      </div>
+  
+    </div>
+  
+  </ion-content>
+  <ion-footer class="tabbar show-tabbar">
+    <div class="footer-call-madal" (tap)='confirm()'>
+      确定
+    </div>
+  </ion-footer>
+<!-- 《后期复用别删》 -->
+<!-- <ion-content class="content model" (tap)="present($event)">
+  <div class="mian" *ngIf='mian_show'>
+    <div class="content-header">
+      <span class="header-sp1">已选商品</span>
+      <span class="header-sp2">清空列表</span>
+    </div>
+  
+    <ion-list>
+      <div class="list-div" *ngFor='let item of arrs'>
+        <p class="goods">清香型茶业 超级无敌牛逼铁观音 </p>
+        <p class="price">￥500</p>
+        <p class="count">
+          <span (tap)='reduce()'>-</span>
+          <input type="number" class="count-number" [(ngModel)]="count_number" />
+          <span (tap)='add()'>+</span>
+        </p>
+      </div>
+     
+    </ion-list>
+  </div>
+
+  <div class="mian" *ngIf='!mian_show'>
+    <div class="content-header">
+      <span class="header-sp1">这个商品名称</span>
+    </div>
+
+    <ion-list>
+      <div class="list-div" *ngFor='let item of arrs'>
+        <p class="goods">清香型茶业</p>
+        <p class="count">
+          <span (tap)='reduce()'>-</span>
+          <input type="number" class="count-number" [(ngModel)]="count_number" />
+          <span (tap)='add()'>+</span>
+        </p>
+      </div>
+     
+    </ion-list>
+  </div>
+  <ion-footer class="model">
+    {{ascertain}}
+  </ion-footer>  
+</ion-content> -->

@@ -1,0 +1,49 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      新增收货地址
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+          <ion-label color="primary">姓名</ion-label>
+          <ion-input type="text" [(ngModel)]="yoursNmae" value="" placeholder='收货人姓名'></ion-input>
+        </ion-item>
+         <ion-item>
+          <ion-label color="primary">联系电话</ion-label>
+          <ion-input type="number" [(ngModel)]="yoursPhone" value="" placeholder='收货人电话'></ion-input>
+        </ion-item>
+
+         
+        <ion-item>
+            <ion-label color="primary">收货地址</ion-label>
+            <city-picker item-content
+                         [cancelText]="'取消'"
+                         [doneText]="'完成'"
+                         [separator]="'-'"
+                         [citiesData]="cityData"
+                         [(ngModel)]="cityName"
+                         (ionChange)="cityChange($event)">
+        
+            </city-picker>
+            <ion-input class="ion_input"></ion-input>
+          </ion-item>
+
+        <ion-item>
+         <ion-textarea [(ngModel)]="xiangxidizhi" placeholder="请输入详细地址" id="bindPicker"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      <ion-item  (tap)='myAddress()'>
+          <button ion-button color="orange" block class="save-button" id="name">保存</button>
+      </ion-item>
+<!-- 	
+  <p>地区编码：  {{code}}
+  </p> -->
+  <!-- https://github.com/raychenfj/ion-multi-picker -->
+</ion-content> 
+

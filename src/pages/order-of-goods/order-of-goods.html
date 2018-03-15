@@ -1,0 +1,151 @@
+<!--
+  Generated template for the OrderOfGoodsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			我的订单
+		</ion-title>
+	</ion-navbar>
+
+	<div class="xuanxiang">
+		<ion-segment [(ngModel)]="type">
+			<ion-segment-button value="all" (click)='OnClick("all")'>全部</ion-segment-button>
+			<ion-segment-button value="daifukuan" (click)='OnClick("daifukuan")'>待付款</ion-segment-button>
+			<ion-segment-button value="daishouhuo" (click)='OnClick("daishouhuo")'>待收货</ion-segment-button>
+			<ion-segment-button value="yiwancheng" (click)='OnClick("yiwancheng")'>已完成</ion-segment-button>
+			<!-- <ion-segment-button value="tuikuan" (click)='OnClick("tuikuan")'>退款中</ion-segment-button> -->
+		</ion-segment>
+	</div>
+</ion-header>
+
+
+<ion-content>
+
+	<div [ngSwitch]="type" class="Switch">
+		<ion-list *ngSwitchCase="'all'">
+			<div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_wodemendian@2x_1.png" class="setting_img"> <span class="store">{{item.storeInfo.storename}}</span>
+					</p>
+					<p class="tab_p2">{{item.ordertitle}}<span>￥{{item.totalgoodsprice}}</span></p>
+
+					<p class="tab_p3"><span class="qiankuan">{{item.createtime}}</span>
+					</p>
+					<p class="tab_p4" *ngIf='item.fukuan_show'> 
+						<span class="btn" (click)='qufukaun(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<p class="tab_p4"*ngIf='item.yifahuo_show'> 
+						<span class="btn" (click)='shouhuo(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<p class="tab_p4" *ngIf='item.go_show'> 
+						<span class="btn" (click)='xuangou()' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<p class="tab_p4"*ngIf='item.tuihuo_show'> 
+						<span class="btn" (click)='tuihuo(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<span [ngClass]="item.status_class">{{item.btnText}}</span>
+				</div>
+			</div>
+			<!-- <div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_dianpu@2x.png" class="setting_img"> <span class="store">{{item.storeName}}</span>
+						<span *ngIf='item.Income' [ngClass]="item.money_status">{{'+￥'+item.totalprice/100}}</span>
+						<span *ngIf='!item.Income' [ngClass]="item.money_status">{{'-￥'+item.totalprice/100}}</span>
+					</p>
+					<p class="tab_p2">{{'订单号：'+item.orderId}}</p>
+
+					<p class="tab_p3" *ngIf='item.allShow'><span class="qiankuan">货款支出</span>
+						<span class="btn" (click)='allTypeOnClick(item)' *ngIf="item.hasbutton">{{item.btnText}}</span>
+					</p>
+
+					<p class="tab_p3" *ngIf='item.fahuo_show'><span class="qiankuan">货款收入</span>
+						<span class="btn" (click)='fahuo()'>发货</span>
+					</p>
+
+					<p class="tab_p3" *ngIf='item.yifahuo_show'><span class="qiankuan">货款支出</span>
+						<span class="btn" (click)='shouhuo(item)'>确认收货</span>
+					</p>
+
+					<span [ngClass]="item.status_class">{{item.this_order}}</span>
+
+				</div>
+			</div> -->
+		</ion-list>
+		<ion-list *ngSwitchCase="'daifukuan'">
+			<div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_wodemendian@2x_1.png" class="setting_img"> <span class="store">{{item.storeInfo.storename}}</span>
+					</p>
+					<p class="tab_p2">{{item.ordertitle}}<span>￥{{item.totalgoodsprice}}</span></p>
+
+					<p class="tab_p3"><span class="qiankuan">{{item.createtime}}</span>
+					</p>
+					<p class="tab_p4">
+						<span class="btn" (click)='qufukaun(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<span [ngClass]="item.status_class">{{item.btnText}}</span>
+				</div>
+			</div>
+		</ion-list>
+		<ion-list *ngSwitchCase="'daishouhuo'">
+			<div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_wodemendian@2x_1.png" class="setting_img"> <span class="store">{{item.storeInfo.storename}}</span>
+					</p>
+					<p class="tab_p2">{{item.ordertitle}}<span>￥{{item.totalgoodsprice}}</span></p>
+
+					<p class="tab_p3"><span class="qiankuan">{{item.createtime}}</span>
+					</p>
+					<p class="tab_p4">
+						<span class="btn" (click)='shouhuo(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<span [ngClass]="item.status_class">{{item.btnText}}</span>
+				</div>
+			</div>
+		</ion-list>
+
+
+		<ion-list *ngSwitchCase="'yiwancheng'">
+			<div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_wodemendian@2x_1.png" class="setting_img"> <span class="store">{{item.storeInfo.storename}}</span>
+					</p>
+					<p class="tab_p2">{{item.ordertitle}}<span>￥{{item.totalgoodsprice}}</span></p>
+
+					<p class="tab_p3"><span class="qiankuan">{{item.createtime}}</span>
+					</p>
+					<p class="tab_p4">
+						<span class="btn" (click)='xuangou()' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<span [ngClass]="item.status_class">{{item.btnText}}</span>
+				</div>
+			</div>
+		</ion-list>
+
+		<!-- <ion-list *ngSwitchCase="'tuikuan'">
+			<div *ngFor='let item of goodsorder' (click)='allOrder(item)'>
+				<div class="dingdan_box">
+					<p class="tab_p1"><img src="assets/img/icon_wodemendian@2x_1.png" class="setting_img"> <span class="store">{{item.storeInfo.storename}}</span>
+					</p>
+					<p class="tab_p2">{{item.ordertitle}}<span>￥{{item.totalgoodsprice}}</span></p>
+
+					<p class="tab_p3"><span class="qiankuan">{{item.createtime}}</span>
+					</p>
+					<p class="tab_p4">
+						<span class="btn" (click)='tuihuo(item)' *ngIf="item.hasbutton">{{item.this_order}}</span>
+					</p>
+					<span [ngClass]="item.status_class" >{{item.btnText}}</span>
+				</div>
+			</div>
+		</ion-list> -->
+		<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+			<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+			</ion-infinite-scroll-content>
+		</ion-infinite-scroll>
+	</div>
+
+</ion-content>

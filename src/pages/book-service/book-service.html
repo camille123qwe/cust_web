@@ -1,0 +1,82 @@
+<!--
+  Generated template for the BookServicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>预约服务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item class="item-service">
+    <div class="serviceName">
+      服务内容
+      <span>{{serviceName}}</span>
+    </div>
+  </ion-item>
+  <ion-item class="item-service">
+    选择服务地址
+  </ion-item>
+  <ion-list>
+    <ion-item class="name-padding one" *ngFor="let item of shiplist;let i = index" (click)='addrId(item.custshippingaddressid)'>
+     <input type="radio" name="select_type"  [id]="item.id" [value]="item.custshippingaddressid">
+      <label class="addr_label" [for]="item.id">
+        <div class="addr_div">
+        <p>{{item.address}}</p>
+        <p>{{item.receivername}} {{item.mobile}}</p>
+        </div>
+      </label>
+    </ion-item>
+    <!-- <ion-item class="name-padding one">
+      <input type="radio" name="select_type" id="addr">
+      <label for="addr" class="addr_label">
+        <div class="addr_div">
+        <p>深圳市南山区粤海街道尚美科技大厦403</p>
+        <p>陈凯新 18819018576</p>
+        </div>
+      </label>
+    </ion-item> -->
+  </ion-list>
+  <ion-item class="add-ship" (tap) = "addship()">
+    <div>
+      <ion-icon name="ios-add" class="adds"></ion-icon>
+      <span>新增地址</span>
+    </div>
+  </ion-item>
+  <ion-list class="timeSelect">
+    <ion-item>
+      选择服务时间
+    </ion-item>
+    <ion-item class="times-item">
+      <ion-label>选择日期</ion-label>
+      <ion-datetime pickerFormat="YYYY MM DD " 
+      [(ngModel)]="times" displayFormat="YYYY年MM月DD日" cancelText="取消" doneText="确认" [min]="times" [max]="maxtimes" ></ion-datetime>
+    </ion-item>
+    <ion-item class="times-item">
+      <ion-label>选择时间</ion-label>
+      <ion-datetime pickerFormat="HH mm" 
+      [(ngModel)]="days" displayFormat="HH:mm" cancelText="取消" doneText="确认" [min]="minhour" [max]="maxhour"></ion-datetime> <!-- -->
+    </ion-item>
+  </ion-list>
+
+  <ion-item class="mark mark-ship">
+    <ion-label>给商家留言</ion-label>
+  </ion-item>
+  <ion-item class="mark">
+    <ion-textarea placeholder="你想对商家说些什么呢" [(ngModel)]="mark"></ion-textarea>    
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+      <p>服务费 <span>￥{{serviceprice}}</span></p>
+      <p (tap)='payment()'>
+            去支付
+      </p>
+  </ion-toolbar>
+</ion-footer>

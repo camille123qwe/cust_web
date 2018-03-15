@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title (click)="chaxunrenwu()">{{Storename}}</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+        <img [src]="FxIMg" class="img-header" />
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+  <!--kaishi  -->
+  <ion-item class="storeface">
+    <img [src]='StoreImg[0]' class="storefaceimg" (tap)="preview(item)">
+    <p class="storeaddr">{{storeaddr}}</p>
+    <div class="icon-img">
+      <img src="assets/img/icon_lianxi@2x.png">
+      <a [href]="tel_str" id="a_tel"></a>
+    </div>
+    <div class="infoitem">
+      <p class="distance">{{distance}}</p>
+      <p>{{opentime}}--{{closetime}}</p>
+    </div>
+    <div class="icon-img col-center" (tap)='toFollow()' *ngIf="!followed">
+      <ion-icon name="ios-heart-outline"></ion-icon>
+      <P>点击关注</P>
+    </div>
+    <div class="icon-img col-center" *ngIf="followed">
+      <ion-icon name="ios-heart" color="orange">
+      </ion-icon>
+      <p>已关注</p>
+    </div>
+
+  </ion-item>
+  <ion-item class="list_margin_item" [hidden]='tho' (tap)="zhankai()">
+    <span>{{yhfirst.quantitle}}</span>
+    <i>共{{yhPrivilegelist.length+1}}条优惠</i>
+    <ion-icon name="ios-arrow-down" item-right color="line-gray"></ion-icon>
+  </ion-item>
+  <ion-list [hidden]='tholist' class="yhlist">
+    <ion-item class="list_margin_item" *ngFor="let item of yhPrivilegelist">
+      <span>{{item.quantitle}}</span>
+    </ion-item>
+  </ion-list>
+  <!-- 为了活动 -->
+  <!-- <ion-slides autoplay=3000 loop=true class="goActive">
+    <ion-slide [ngClass]="slide_img" *ngFor="let item of banners" (tap)="active(item)">
+      <img  src={{item.src}} >
+    </ion-slide> 
+  </ion-slides> -->
+  <!-- 为了活动 -->
+  <ion-item class="service" *ngIf="isService||isDelivery">服务</ion-item>
+  <ion-list *ngIf="isService">
+    <ion-item class="service-info" *ngFor="let item of booklist">
+      <div>
+        <p>{{item.servicename}}</p>
+        <p>服务费用
+          <span *ngIf='ifshow(item.serviceprice)'>￥{{item.serviceprice}}</span>
+        </p>
+      </div>
+      <ion-note item-right>
+        <button ion-button clear item-right class="follow" (tap)="book(item)">立即预约</button>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="isDelivery">
+    <ion-item class="service-info" *ngFor="let item of deliverylist">
+      <div>
+        <p>三公里送货上门</p>
+        <p class="service-mark">
+          <span *ngIf='ifshow(item.sendPrice)'>{{item.sendPrice}}元起送</span>
+          <span *ngIf='ifshow(item.sendFreePrice)'>{{item.sendFreePrice}}元免配送费</span>
+        </p>
+      </div>
+      <ion-note item-right>
+        <button ion-button clear item-right class="follow" (tap)="qianggou()">去抢购</button>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-toolbar class="shop-toolbar">
+    <span start class="left_span">爆款商品</span>
+  </ion-toolbar>
+
+  <ion-list>
+    <ion-item class="goods-item" *ngFor="let item of goods_list" (click)='detail(item,yhPrivilege,shopInfo)'>
+      <img [src]='goodsface_900+item.goodsface' [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+      />
+      <div class="goods-header">{{item.goodsname}}</div>
+      <div class="goods-description">{{item.goodsdesc}}</div>
+      <div class="goods-cost">
+        <span class="new-cost">{{'￥ '+item.sellprice}}</span>
+        <span class="old-cost" *ngIf="!item.pric">{{'￥'+item.marketprice}}</span>
+      </div>
+    </ion-item>
+    <div (click)='getAllGoods()' class="more-goods" *ngIf='moreShop'>查看更多商品</div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

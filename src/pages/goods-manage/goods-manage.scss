@@ -1,0 +1,66 @@
+page-goods-manage {
+
+.span-actived{
+    text-align: center;
+    font-size: 17px;
+    color: #fb6d07;
+    padding: 10px 15px;
+}
+.span-off{
+    text-align: center;
+    color: #888888;
+    font-size: 17px;
+    padding: 10px 15px;
+    
+}
+ .goods-item{
+        padding: 10px;
+    }
+    .goods-header{
+    font-size: 16px;
+    color: #333333;
+    position: absolute;
+    top: 18px;
+    // margin-top: 8px;
+    }
+    .goods-description{
+        font-size: 12px;
+        color: #888888;
+        padding: 10px 0;
+    }
+    .goods-sale{
+        font-size: 14px;
+        color: #0388dc;
+    }
+    .goods-cost{
+    font-size: 14px;
+    position: absolute;
+    bottom: 16px;
+    }
+    .new-cost{
+     color: #fb6d07;
+     padding-right: 14px;
+    }
+    .old-cost{
+        color: #666666;
+        text-decoration:line-through;
+    }
+    .change-price{
+        // position: absolute;
+        // bottom: 12px;
+        // right: 10px;
+        // float: right;
+        width: 45px;
+        height: 27px;
+        font-size: 12px;
+    }
+    .change-price-note{
+        margin-right:-5px !important;
+    }
+   .list-ios > .item-block:last-child .item-inner, .list-ios > .item-wrapper:last-child .item-block .item-inner {
+        border: 0 !important;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+}

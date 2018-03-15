@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>赠送成功</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div style="text-align: center;padding-top:65px">
+       <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" class="rightcirlce" color="orange" center></ion-icon>
+  </div>
+  <div style="text-align: center;padding-top:20px;font-size:21px;color:#333">赠送成功</div>
+  <div *ngIf="needlogin" >
+  <p class="reginfo">您的好友还不是店呼用户</p>
+  <button ion-button block color="orange" (click)="fenxiang()">马上告诉好友</button>
+  </div>
+</ion-content>

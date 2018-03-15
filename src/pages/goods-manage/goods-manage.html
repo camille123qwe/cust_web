@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg-white">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+  <ion-row class="news-type">
+    <!--<ion-col (tap)="selectNews(item)" [ngClass]="item.tab_class" *ngFor="let item of types">{{item.groupname}}</ion-col>-->
+    <span (tap)="selectNews(item)" [ngClass]="item.tab_class" *ngFor="let item of types">{{item.groupname}}</span>
+  </ion-row>
+  <div class="my-hr"></div>
+
+  <ion-list>
+    <ion-item class="goods-item" *ngFor="let item of goods_list" (click)='detail(item,yhPrivilege,shopInfo)'>
+      <img [src]='goodsface_300+item.goodsface' [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+      <div class="goods-header">{{item.goodsname}}</div>
+      <div class="goods-description">{{item.goodsdesc}}</div>
+      <!--<div class="goods-sale">优惠:买三送一</div>-->
+      <div class="goods-cost">
+        <span class="new-cost">{{'￥ '+item.sellprice}}</span>
+        <span class="old-cost" *ngIf="item.oldPriceShow" >{{'￥ '+item.marketprice}}</span>
+      </div>
+      <!--<ion-note item-right class="change-price-note">
+        <button ion-button color="light_red" outline class="change-price">调价</button>
+      </ion-note>-->
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header align-title="center" >
+  <ion-navbar color="orange" mode="ios" class="home-navbar">
+    <ion-title>附近门店</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-right color="white">{{select_city}}</button>
+    </ion-buttons>
+    <div class="center-myInput">
+    	<img (tap)="onSearchInput($event)" [src] ="shousuo_img"/>    
+    </div>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="myContent">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+   <div class="dingweishezhi" *ngIf='dingweishibai'>
+      <h3>柚子君没能成功获取您的位置定位</h3>
+      <p class="jiejue">您可以这样解决</p>
+      <p class="huoqu">1、<span class="shuaxin" (click)='refreshAgain()'>点击刷新</span>，重新获取定位。</p>
+      <p class="huoqu">2、若依然不能定位，请检查手机定位功能是否打开，或检查是否开启了手机定位服务权限。</p>
+      <!--<p class="shiezhifuwu"><span class="shezhi" (click)='toPreference()'>点击此处</span>去设置服务权限</p>-->
+    </div>
+    <p class="fujinmendian" *ngIf='fujinmendian'>附近暂无门店!</p>
+  <ion-list id="home_ion_list">
+    <ion-item class="item" *ngFor="let item of guessLikeShops" (tap)="getShopDetails(item)" >
+      <img [src]="storefaceurl_300+item.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+      <div class="item-header">{{item.storename}}</div>
+      <div class="price" ><span class="prices" *ngIf="!item.val">商品数:{{item.goodscount}}</span><span class="pricec" *ngIf="!item.Val">消费{{item.buycount}}次</span></div>
+      <div class="item-address">{{item.storeaddr}}</div>
+      <div class="item-right">{{item.distance}}</div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

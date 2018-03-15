@@ -1,0 +1,91 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>限时优惠</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+       <img [src] ="FxIMg" class="img-header"/>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+
+  <div class="my-hr"></div>
+
+  <ion-row class="tab_header">
+    <ion-col (tap)="selectedLeft()" [ngClass]="tab1_class">正在抢购</ion-col>
+    <ion-col (tap)="selectedRight()" [ngClass]="tab2_class">即将开始</ion-col>
+  </ion-row>
+
+  <div class="my-hr"></div>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+  <div [ngSwitch]="type" class="Switch">
+    <ion-list no-lines *ngSwitchCase="'left'">
+      <p class="tishi" *ngIf='rush_ist.thisShow'>
+        <span *ngIf='rush_ist.thisShow'>距离本期活动结束还有<span class="shijian">{{shenyushijian}}</span>天 <span class="riqi">{{validday}}</span></span>
+        <!--<span *ngIf='!qidai' class="weikaishi">敬请期待!</span>-->
+      </p>
+      <ion-item class="item" *ngFor='let item of rush_ist.rows' (click)="xiangqing(item)">
+        <img [src]="goodsface_300+item.goodsface" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+        />
+        <div class="item-header">{{item.goodsname}}</div>
+        <div class="item-store">
+          <span class="mendian">{{item.storeInfos[0].storename}}</span> <span class="juli">{{item.storeInfos[0].distance}}</span>
+        </div>
+        <div class="item-address">
+          <span class="qianggou">{{'￥'+item.sellprice /100}}</span> <span [ngClass]="item.qiangClass">{{item.qiangTxt}}</span>
+        </div>
+        <div class="item-right">
+          <span class="shichang">{{'￥'+item.marketprice /100}}</span> <span class="kuaiqiang"><i [ngStyle]='item.jindu'>{{item.progress}}</i></span>
+        </div>
+      </ion-item>
+      <!--<ion-item class="item" (click)="xiangqing()">
+          <img [src]="ddasdsd" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+          <div class="item-header">市芗漳州市芗城区新华南2栋1区新号</div>
+          <div class="item-store">
+            <span class="mendian">军坤数码</span> <span class="juli">900M</span>
+          </div>
+          <div class="item-address">
+            <span class="qianggou">￥4500</span> <span class="qiang">抢券</span>
+          </div>
+          <div class="item-right">
+            <span class="shichang">￥5500</span> <span class="kuaiqiang">已抢25%</span>
+          </div>
+        </ion-item>-->
+        <div class="qidai" *ngIf='!rush_ist.thisShow'>敬请期待！</div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'right'">
+      <p class="tishi" *ngIf='rush_right.thisShow'>
+        <span class="weikaishi">{{validday}}</span>
+      </p>
+      <ion-item class="item" *ngFor='let item of rush_right.rows' (click)="xiangqing(item)">
+        <img [src]="goodsface_300+item.goodsface" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+        <div class="item-header">{{item.goodsname}}</div>
+        <div class="item-store">
+          <span class="mendian">{{item.storeInfos[0].storename}}</span> <span class="juli">{{item.storeInfos[0].distance}}</span>
+        </div>
+        <div class="item-address">
+          <span class="qianggou">{{'￥'+item.sellprice /100}}</span> <span class="geshu">{{'限量供应'+item.releasequality}}</span>
+        </div>
+        <div class="item-right">
+          <span class="shichang">{{'￥'+item.marketprice /100}}</span>
+        </div>
+      </ion-item>
+			<div class="qidai" *ngIf='!rush_right.thisShow'>敬请期待！</div>
+    </ion-list>
+      
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>

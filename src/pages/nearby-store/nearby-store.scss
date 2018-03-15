@@ -1,0 +1,155 @@
+page-nearby-store{
+
+	
+		
+	
+	.center-myInput {
+		margin-top: 3px;
+	}
+	
+	.news-bar {
+		border-top: 1px solid #c9c9c9;
+		border-bottom: 1px solid #c9c9c9;
+	}
+	.new-bar-content {
+		padding-top: 20px;
+		font-size: 14px;
+		color: #333333;
+	}
+	.next {
+		margin-top: 18px;
+		text-align: center;
+		color: #c8c8c8;
+	}
+	
+	.searchbar-input {
+		color: red !important;
+	}
+	.searchbar-input-container {
+		//         background: #FFF;
+		border-radius: 5px;
+	}
+	.label-ios {
+		margin: 0;
+	}
+	.item-address {
+		white-space: normal;
+		margin-top: 5px;
+		position: relative;
+		width: 98%;
+		min-height: 18px;
+		max-height: 33px;
+		font-size: 12px;
+		display: block;
+		color: #888;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		// overflow:hidden; 
+		// text-overflow:ellipsis;
+		// display:-webkit-box; 
+		// -webkit-box-orient:vertical;
+		// -webkit-line-clamp:2;
+	}
+	.item-header {
+		font-size: 13px;
+	}
+	.item {
+		border-bottom: 1px solid #c8c7cc;
+		padding-left: 5px;
+	}
+	.item-right {
+		position: absolute;
+		right: 5px;
+		top: 78px;
+		font-size: 13px;
+		color: #888;
+	}
+	.price {
+		height: 16px;
+		margin-top: 6px;
+	}
+	.prices {
+		font-size: 12px;
+		color: #888;
+		float: left;
+	}
+	.pricec {
+		font-size: 12px;
+		color: #888;
+		float: right;
+	}
+	.item-inner {
+		border: 0 !important;
+	}
+	
+	.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+		border-width: 0px !important;
+	}
+	.swiper-pagination-bullet-active {
+		background: #fff !important;
+	}
+	.dingweishezhi{
+		width: 100%;
+		margin-top: 30px;
+		border: 0;
+		
+	}
+	h3{
+		padding: 20px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 17px;
+	}
+	.shuaxin{
+		color: dodgerblue;
+	}
+	.shezhi{
+		color: red;
+		text-decoration:underline
+	}
+	.jiejue{
+		margin: 0 auto;
+		text-align: center;
+		font-size: 13px;
+		padding: 4px;
+		color: #666;
+	}
+	.huoqu{
+		width: 60%;
+		margin: 0 auto;
+		min-height: 20px;
+		font-size: 14px;
+		margin-top: 4px;
+		color: #666;
+	}
+	.shiezhifuwu{
+		width: 60%;
+		text-align: center;
+		margin: 0 auto;
+		color: #666;
+	}
+
+	.back-button-text-ios {
+        letter-spacing: -.01em;
+        display: none;
+    }
+}
+
+.title {
+	text-align: center;
+}
+
+.header-icon {
+	font-size: 24px;
+}
+
+.bar-button-default.bar-button-ios-default {
+	color: #fb6d07;
+}
+
+element.style {
+    color: #fff;
+}

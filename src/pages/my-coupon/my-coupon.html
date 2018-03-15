@@ -1,0 +1,127 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>我的优惠券</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="presentPrompt()">
+      <img src="assets/img/icon_xinzeng@2x.png" class="img-header"/>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+  <div class="my-hr"></div>
+  <ion-row class="tab_header">
+    <ion-col (tap)="selectedLeft()" [ngClass]="tab1_class" >可用</ion-col>
+    <ion-col (tap)="selectedRight()" [ngClass]="tab2_class">失效</ion-col>
+  </ion-row>
+  <div class="my-hr"></div>
+</ion-header>
+
+<ion-content class="privilege">
+  <div [ngSwitch]="type" class="Switch" >
+    <ion-list *ngSwitchCase="'left'" >
+      <div class="youxiaoquan" *ngFor="let item of arr2">
+          <div class="Lqun" (tap)='favorable(item)'*ngIf="!blquan">
+            <div class="Lqun_left">
+              <span class="maney">{{'满'+item.promotionCard.costmoneyneed+'可使用'}}</span>
+            </div>
+            <div class="Lqun_right">
+              <h2>{{item.promotionCard.storeInfo.storename}}</h2>
+              <p>{{'有效期:'+item.validday}}</p>
+            </div>
+          </div>
+      </div>
+      
+     <div class="youxiaoquan" *ngFor="let item of arr">
+          <div class="Lqun" (tap)='xianshiyouhui(item)'>
+            <div class="Lqun_left">
+              <span class="xianshi">限时优惠</span>
+            </div>
+            <div class="Lqun_right">
+              <p class="p_1" *ngIf='dataShowFn(item.goodsRush)'>{{item.goodsRush.goodsname}}</p>
+              <p class="store p_2" *ngIf='dataShowFn(item.storeInfo.storename)'>{{item.storeInfo.storename}}</p>
+            </div>
+            <p class="p_3" *ngIf='dataShowFn(item.validday2)'>{{'提货时间:'+item.validday2}}</p>
+          </div>
+      </div>
+      <div class="youxiaoquan" *ngFor="let item of arr3">
+        <div class="Lqun" (tap)='heixao(item)'>
+          <div class="Lqun_left">
+            <span class="">活动奖品 <br>
+               <span class="use">使用</span>
+            </span>
+            
+          </div>
+          <div class="Lqun_right">
+            <p class="p_1" >{{item.cdrAwardInfo.awardtitle}}</p>
+            <p class="store p_2 used" >{{item.cdrAwardInfo.giftname}}</p>
+          </div>
+          <!-- <p class="p_3" >234</p> -->
+        </div>
+    </div>
+      <div class='quan' *ngIf="!Hquan">暂无可用优惠券哟!</div>
+    </ion-list>
+     
+
+    <ion-list *ngSwitchCase="'right'" >
+        <div class='quan' [hidden]="Hquan">暂无失效优惠券哟!</div>
+       <div class="youxiaoquan_r" *ngFor="let item of arr2">
+          <div class="Lqun_r" *ngIf="!blquan">
+            <div class="Lqun_left_r">
+              <span class="maney">{{'满'+item.promotionCard.costmoneyneed+'可使用'}}</span>
+            </div>
+            <div class="Lqun_right_r">
+              <h2 class="storename">{{item.promotionCard.storeInfo.storename}}</h2>
+             
+              <span>{{'卡号:'+item.cardid}}</span>
+            </div>
+            <div class="cardid">
+              <p class="list_p">
+                  <span *ngIf="!item.jindian">进店送：</span>
+                  <span *ngIf="!item.jdquan1">{{item.promotionCard.liulang2/1024 + 'M流量'}}</span>
+                  <span *ngIf="!item.jdquan2">{{item.promotionCard.cashvalue2/100+'代金券'}}</span>
+                  <span *ngIf="!item.jdquan3">{{item.promotionCard.voicetimes2/60+'分钟通话'}}</span> 
+              </p>
+              <p class="list_p">
+                <span *ngIf="!item.xiaofei">消费送：</span>
+                <span *ngIf="!item.xfquan1">{{item.promotionCard.liulang3/1024 + 'M流量'}}</span>
+                <span *ngIf="!item.xfquan2">{{item.promotionCard.cashvalue3/100+'代金券'}}</span>
+                <span *ngIf="!item.xfquan3">{{item.promotionCard.voicetimes3/60+'分钟通话'}}</span> 
+              </p>
+            </div>
+          </div>
+       </div>
+
+       <div class="youxiaoquan" *ngFor="let item of arr">
+          <div class="Lqun" (tap)='xianshiyouhui(item)'>
+            <div class="Lqun_left">
+              <span class="xianshi">限时优惠</span>
+            </div>
+            <div class="Lqun_right">
+              <p class="p_1">{{item.goodsRush.goodsname}}</p>
+              <p class="store p_2">{{item.storeInfo.storename}}</p>
+              <p class="store p_3">{{'提货时间:'+item.validday}}</p> 
+            </div>
+          </div>
+      </div>
+      
+      <div class="youxiaoquan" *ngFor="let item of arr3">
+        <div class="Lqun">
+          <div class="Lqun_left">
+            
+            <!--<span class="xianshi guoqi">活动奖品 <br>
+               <span class="disable">已用</span>
+            </span>-->
+            <span class="Lqun_left_span" >活动奖品 <br>
+            <span class="use Lqun_left_span" >已使用</span>
+            </span>
+          </div>
+          <div class="Lqun_right">
+            <p class="p_1 used" >{{item.cdrAwardInfo.awardtitle}}</p>
+            <p class="store p_2 used" >{{item.cdrAwardInfo.giftname}}</p>
+          </div>
+          <!-- <p class="p_3" >234</p> -->
+        </div>
+    </div>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,113 @@
+page-my-shop {
+    .label-ios{
+        margin: 0;
+        
+    }
+    .center-myInput{
+        background: rgba(0, 0, 0, 0.2);
+        padding: 5px 5px 0;
+    }
+    .item-address{
+           white-space: normal;
+           margin-top: 5px;
+           position: relative;
+           width: 136px;
+           height: 33px;
+           font-size: 12px;
+           display: block;
+           color: #888;
+            white-space:nowrap; 
+           overflow:hidden;
+           text-overflow:ellipsis;
+           -webkit-box-orient:vertical;
+           -webkit-line-clamp:2; 
+    }.item-header{
+        
+       font-size: 13px;
+       
+    }.list-ios .item-block .item-inner{
+        border: 0 !important; 
+
+    }.item {
+        border-bottom: 1px solid #c8c7cc;
+        padding-left: 5px;
+        
+    }.item-right{
+        position: absolute;
+        right: 5px;
+        top: 78px; 
+        font-size: 10px;
+        color: #888;
+        
+    }.price{
+        height: 16px;
+        margin-top: 6px;
+        
+    }.prices{
+        font-size: 12px;
+        color: #888;
+        float: left;
+        
+    }
+   
+    .pricec{
+        font-size: 12px;
+        color: #888;
+        float: right;
+        
+    }.item-block{
+        border:0 !important;
+    }
+    .item-inner{
+        border: none !important;
+    }
+    .wodemendian{
+        text-align: center;
+        margin-top: 100px;
+    }
+    .item-wrapper:first-child{
+        border-top: 1px solid #c8c7cc !important;
+    }
+
+    ion-col {
+        text-align: center;
+    }
+}
+//.item-address{
+//  font-size: 12px;
+//  color: #888888;
+//  word-wrap: break-word !important; 
+//  word-break: break-all !important; 
+//}
+//.item-next{
+//  font-size: 15px;
+//  color: #fb6d07;
+//  position: absolute;
+//  bottom: 0;
+//  // margin-bottom: 8px;
+//  padding: 8px 8px 8px 0;
+//}
+//// .item-header {
+////     font-size: 16px;
+////     color: #333333;
+////     position: absolute;
+////     top: 10px;
+////     // margin-top: 8px;
+////     word-wrap: break-word !important; 
+////     word-break: break-all !important; 
+//// }
+.item-custom{
+     font-size: 12px;
+    color: #888888;
+    position: absolute;
+    bottom: 8px;
+    right:15px;
+}
+   .item{
+//     padding: 10px;
+   }
+
+.hr-2{
+    height: 1px;
+    background-color: #c9c9c9;
+}

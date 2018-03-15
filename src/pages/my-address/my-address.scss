@@ -1,0 +1,94 @@
+page-my-address {
+    .content{
+        background: #f2f2f2;
+    }
+   .list {
+       margin-top: -10px;
+   }     
+.item-inner{
+    border-bottom: none!important;
+}
+
+.divideSpan{
+    background: #eaeaea;
+    height: 10px;
+    width: 100%;
+}
+ion-item-sliding{
+    // border-bottom:1px solid #f2f2f2 !important;
+    margin-top: 10px;
+}
+.item-checkbox{
+    min-height: 0;
+    height: 100px;
+}
+.item.item-ios .checkbox-ios{
+    display: inline-block !important;
+    float: left;
+    margin: 10px 16px 0px 2px; 
+}
+.label-ios{
+    margin:0 !important;
+    font-size: 12px;
+    
+}
+
+.addr{
+    color: #333;
+    white-space:normal;
+    font-size: 14px;
+}
+.info{
+    border-bottom: 1px solid #eaeaea !important;
+    height: 27px;
+}
+.shipname,.tel{
+    color: #666;
+}
+.shipname{
+    display: inline-block;
+    padding-right: 15px;
+}
+
+img{
+    margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -4px;
+    width: 14px;
+}
+.item-ios p {
+    overflow: inherit;
+    margin: 0 0 0;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-overflow: inherit;
+    color: #8e9093;
+}
+.addCheckbox{
+    height: 20px;
+}
+.defaultAdd{
+   margin: 13px 0 0px 0 !important;
+//    height: 27px;
+    float: left;
+}
+.foot_title{
+    height: 46px;
+    line-height:46px;
+    text-align: center;
+    font-size: 17px;
+    font-weight:900; 
+    margin: 0;
+    color: #666;
+    
+}
+.footer .toolbar-background-ios{
+    border:0 !important;          
+    
+}
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border:0 !important;
+}
+
+
+}

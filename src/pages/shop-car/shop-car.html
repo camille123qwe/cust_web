@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			我的购物车
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	
+	<ion-list>
+		<div *ngFor='let item of shopcart' >
+			<ion-item class="store" *ngIf='item.nameshow'>
+				<ion-label><img src="assets/img/icon_dianpu@2x.png" class="setting_img" >{{item.thisStoreName}}</ion-label>
+				<ion-checkbox [(ngModel)]="item.payStatus" (click)="mendian(item.payStatus,item)"></ion-checkbox>
+			</ion-item>
+
+			<ion-item-sliding *ngFor='let obj of item'>
+			<ion-item>
+				<ion-label>
+					<img [src]='url_900+obj.goodsInfo.goodsface' class="middle_img" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';" item-left/>
+					<div class="xinxi">
+						<div class="goods-header">{{obj.goodsInfo.goodsname}}</div>
+						<div class="goods-description">已选：<span *ngFor='let prop of obj.props'>{{prop.valuename}}</span></div>
+						<div class="goods-cost">
+							<span class="new-cost cost">{{'店呼价：￥'+obj.goodsInfo.sellprice/100}}<span class="count">{{'x'+obj.count}}</span></span>
+							<span class="new-cost marketprice">{{'市场价：￥'+obj.goodsInfo.marketprice/100}}</span>
+						</div>
+					</div>
+
+				</ion-label>
+				<ion-checkbox [(ngModel)]="obj.goodsStatus" (click)="thisGoods(obj.goodsStatus,item,obj)"></ion-checkbox>
+			</ion-item>
+			<ion-item-options side="right">
+				<button ion-button color="danger" (tap)="onClickUnFolow(obj,item)">
+					删除
+				</button>
+			</ion-item-options>
+			</ion-item-sliding>
+
+		</div>
+		<div class="tishi" *ngIf="tishi">
+			<p>购物车空空如也</p>
+			<p>快去挑选几件宝贝吧！</p>
+		</div>
+	</ion-list>
+
+	
+</ion-content>
+<ion-footer>
+	<div class="pay">
+		<span class="shuliang" (click)='payList()'>{{goodsNum+'件商品'}}</span>
+		<span class="span_right"><span class="money">{{'合计：￥'+money/100}}</span><span class="fukuan">去付款</span></span>
+	</div>
+</ion-footer>

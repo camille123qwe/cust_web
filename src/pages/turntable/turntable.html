@@ -1,0 +1,77 @@
+<!--
+  Generated template for the TurntablePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>转盘抽奖</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="content" style="background-image:url(assets/img/cj_bg_imge@2x.png);background-size:100% 100%;">
+  <p class="jihui">{{'您有'+jihui+'次抽奖的机会'}}</p>
+  <div class="clearfix"></div>
+  
+    <img src="assets/img/icon_liwu_1@2x.png" id="diy1-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_2@2x.png" id="diy2-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_3@2x.png" id="diy3-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_4@2x.png" id="diy4-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_5@2x.png" id="diy5-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_6@2x.png" id="diy6-img" style="display:none;" />
+    <img src="assets/img/icon_liwu_7@2x.png" id="diy8-img" style="display:none;" />
+    <img src="assets/img/icon_xiexiecanyu@2x_31.png" id="diy7-img" style="display:none;" />
+
+    <div class="banner" style="margin-top: 18px">
+    <div class="turnplate" style="background-image:url(assets/img/cj_imge_zhuanpan@2x.png);background-size:100% 100%;">
+      <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+      <img class="pointer" [src]='cj_img' />
+
+    </div>
+  </div>
+  <p class="fenxiang">分享给小伙伴，在赢一次抽奖机会呀
+  </p>
+  <div class="shuoming">
+    <!-- icon_huodongshuoming@2x -->
+    <p> <img src="assets/img/icon_huodongshuoming@2x.png"/> &nbsp;奖品说明：</p >
+    <span>特等奖：TCL 55寸王牌蓝光液晶显示屏彩电一台 </span>
+    <span>一等奖：普洱茶两饼 19.9元可购买原价168元 景迈普洱茶</span>
+    <span>二等奖：陕西咸阳苹果一箱 权益价29.9 / 公映仓经典家庭牛排套餐 原价228 全场5折餐券一张</span>
+    <span>三等奖：99元购买原价398元店呼包年卡资格 / 店呼200分钟通话</span>
+    <span>四等奖：89.9元购买原价228元北极绒纯棉床上四件套 / 39.9元购买原价168元北极绒短毛绒四件套</span>
+    <span>五等奖：精美家装全场低至2折优惠券一张</span>
+    </div>
+  <div class="shuoming">
+    <!-- icon_huodongshuoming@2x -->
+    <p> <img src="assets/img/icon_huodongshuoming@2x.png"/> &nbsp;活动说明：</p>
+    <span>1、此次抽奖仅限注册用户参与</span>
+    <!-- <span>2、每天抽奖次数上限为10次</span> -->
+    <span>2、抽奖机会的获取方式，除了购买外，通过分享抽奖结果也可获得额外抽奖机会</span>
+    <span>3、特定奖品需要到指定的商店进行领取</span>
+    <span></span>
+  </div>
+  <div *ngIf='yinying' class="yinying" (click)='conback()'></div>
+
+</ion-content>
+<ion-footer *ngIf='footerShow'>
+  <div class="gopay">
+      <div class="foot">
+          <p class="num">购买抽奖次数</p>
+          <p class="cishu">次数</p>
+          <p class="count">
+            <span (tap)='reduce()'>-</span>
+            <input type="number" class="count-number" [(ngModel)]="count_number" />
+      
+            <span (tap)='add()'>+</span>
+      
+          </p>
+          <p class="cont"></p>
+         
+        </div>
+      <span class="daizhifu">{{'支付金额：￥'+count_number+'元'}}</span>
+      <span (click)='goPay()'>去支付</span>
+    </div>
+</ion-footer>

@@ -1,0 +1,30 @@
+
+
+<ion-content class="yhcont" (tap)="present($event)">
+   <div class="model ">
+     <!-- <p class="erweima"><img [src]="erweimaImg"/></p> -->
+     <div class="erweima">
+      <qr-code [value]="contents" size="200" foreground="#fb6d07"></qr-code>
+     </div>
+     <p class="Guide">{{Item.promotionCard.storeInfo.storename}}</p>
+  
+     <p class="request">
+        <span *ngIf="!jindian">进店送：</span>
+        <span *ngIf="!jdquan1">{{Item.promotionCard.fluxPackage2.ydfluxkbs/1024+'M流量'}}</span>
+        <span *ngIf="!jdquan2">{{Item.promotionCard.cashvalue2/100+'代金券'}}</span> 
+        <span *ngIf="!jdquan3">{{Item.promotionCard.voicetimes2/60+'分钟通话'}}</span> 
+     </p>
+     <p class="request">
+        <span *ngIf="!xiaofei">消费送：</span>
+        <span *ngIf="!xfquan1">{{Item.promotionCard.fluxPackage3.ydfluxkbs/1024+'M流量'}}</span>
+        <span *ngIf="!xfquan2">{{Item.promotionCard.cashvalue3/100+'代金券'}}</span> 
+        <span *ngIf="!xfquan3">{{Item.promotionCard.voicetimes3/60+'分钟通话'}}</span> 
+     </p> 
+     <p class="mo_bottom">
+        <span class="cardy card_bottom">{{'卡号：'+Item.promotionCard.cardid}}</span>
+        <span class="day card_bottom">{{'有效期至:'+qishitime}}</span>
+     </p>
+   </div>
+     
+     
+</ion-content>

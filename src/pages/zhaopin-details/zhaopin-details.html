@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle (tap)="Back()">
+  	 <ion-icon ios="ios-arrow-back" md="ios-arrow-back"  class="orange"></ion-icon>
+  	</button>
+    <ion-title>招聘信息</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="fenxiang()">
+      <img [src] ="FxIMg" class="img-header"/>
+    </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="title_banner">
+    <ion-slides pager=true>
+      <ion-slide *ngFor="let item of StoreImg">
+        <img [src]='item' class="title_banner" [ngStyle]='silderimg' onerror="javascript:this.src='assets/img/bm_imge@2x.png';" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-item class="single-item">
+    <div class="storename">{{storename}}
+      <span class="sp-call" *ngIf='call_mendian'>
+        <img src="assets/img/icon_shangpudianhua@2x.png" alt="*" />
+        <a [href]="tel_str" id="a_tel"></a>
+      </span>
+    </div>
+
+    <div>
+      <img src="assets/img/icon_dizhi@2x.png" alt="*" class="dizhi" />
+      <span class="item-address">{{storeaddr}}</span>
+      <span class="sp-call distance">{{distanceShow}}</span>
+    </div>
+
+  </ion-item>
+  <ion-item class="single-item">
+    <div class="storename">{{jobname}}</div>
+    <div>
+      <span class="item-address"> 
+      <span >经验：{{workyear}}</span>&nbsp;&nbsp;&nbsp;
+      <span>学历：{{recordschool}}</span>
+      </span>
+    </div>
+
+    <ion-note item-right class="follow">
+      <span class="salery">
+        <span>{{saleryshow}}</span><span *ngIf="isdeduct == 1">+提成</span>
+      </span>
+
+    </ion-note>
+  </ion-item>
+
+  <ion-toolbar class="shop-toolbar">
+    <span>职位描述</span>
+  </ion-toolbar>
+  <div class="goods-description" [innerHTML]='jobdesc'></div>
+
+</ion-content>

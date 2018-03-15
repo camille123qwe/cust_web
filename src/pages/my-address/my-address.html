@@ -1,0 +1,80 @@
+<!--
+  Generated template for the MyAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title (tap)='chaxun()'>管理收货地址</ion-title>
+      <!--<ion-buttons end>
+        <button ion-button icon-only (tap)="more()">-->
+      <!--< img src="assets/img/icon_gengduoxuanze2x.png" class="img-more"/>-->
+      <!--<img src='assets/img/icon_gengduoxuanze2x.png' class="img-more"/>
+        </button>
+      </ion-buttons>-->
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="content">
+  
+    <!-- <ion-item-sliding class="item">
+      <ion-item>
+        <p class="addr">{{item.address}}</p>
+        <p class="info">
+          <span class="shipname">{{item.receivername}}</span>
+          <span class="tel">{{item.mobile}}</span>
+        </p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (tap)="onClickUnFolow(item)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding> -->
+  
+    <ion-list>
+      <ion-item-sliding class="item_sliding" *ngFor="let item of myaddr">
+  
+        <ion-item (tap)='shezhi(item)'>
+  
+          <ion-label>
+  
+            <p class="addr">{{item.address}}</p>
+            <p class="info">
+              <span class="shipname">{{item.receivername}}</span>
+              <span class="tel">{{item.mobile}}</span>
+            </p>
+            <!--<input class="addCheckbox" type="checkbox" value="checkbox" checked="checked" [(ngModel)]="item.selectStatus" (click)='checkboxClick(item,item.selectStatus)'/>-->
+           <ion-checkbox color="orange" [(ngModel)]="item.selectStatus" (click)='checkboxClick(item,item.selectStatus)' ></ion-checkbox>
+            <span class="defaultAdd">默认地址</span>
+            
+            </ion-label>
+              
+        </ion-item>
+        <!--<input class="addCheckbox" type="checkbox" [(ngModel)]="item.status" (click)='checkboxClick(item,item.status)' />-->
+        <!--<ion-item>
+        <ion-label>设为默认</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni" color="orange"></ion-checkbox>
+      </ion-item>-->
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="rmaddress(item)">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar >
+      <p class="foot_title" (click)="addAddr()">
+        <img src="assets/img/icon_xinzengdizhi@2x.png" item-left class="setting-img">
+        <span>新增地址</span>
+    
+    </p>
+    </ion-toolbar>
+  </ion-footer>

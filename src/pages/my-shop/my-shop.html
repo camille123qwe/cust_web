@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的门店</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!--<ion-searchbar [(ngModel)]="searchInput" (ionFocus)="search($event)" placeholder="搜索门店" mode='ios' color='orange'>
+    <ion-icon name="md-search"></ion-icon>
+  </ion-searchbar>-->
+
+  <div class="center-myInput" >
+    	<img (tap)="search($event)" [src] ="shousuo_img"/>    
+    </div>
+  <div class="my-hr"></div>
+  <ion-row class="tab_header">
+    <ion-col (tap)="selectedLeft()" [ngClass]="tab1_class">我最常去</ion-col>
+    <ion-col (tap)="selectedRight()" [ngClass]="tab2_class">离我最近</ion-col>
+  </ion-row>
+  <div class="hr-2"></div>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'left'">
+      <p class="wodemendian" *ngIf='changqu'>暂无关注门店!</p>
+      <ion-item-sliding class="item" *ngFor="let item of familar_shops.rows">
+        <ion-item (tap)="getShopDetails(item)" *ngIf="!item.itemshow">
+        	<!-- -->
+          <img [src]="storefaceurl_300+item.store.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"/>
+           <p class="item-header" >{{item.store.storename}}</p>
+		       <div class="price"><span class="prices" *ngIf="!item.Val">商品数:{{item.store.goodscount}}</span><span class="pricec" *ngIf="!item.val">消费{{item.store.buycount}}次</span></div>
+		       <div class="item-right">{{item.store.distance}}</div>
+		       <div class="item-address">{{item.store.storeaddr}}</div>
+		       <!--<div class="item-next">进去看看</div>-->
+		       <!--<div class="item-custom">{{item.custusercount}}</div>-->
+           <!--<p class="item-header">{{item.store.storename}}</p>
+	          <div class="item-address">{{item.store.storeaddr}}</div>
+	          <div  class="item-next"  (tap)="getShopDetails(item)">进去看看</div>
+	          <div item-right>{{item.store.distance+'m'}}</div>
+	          <div class="item-custom">{{item.store.custusercount}}</div>-->
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="onClickUnFolow(item)">
+        取消关注
+      </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'right'">
+      <p class="wodemendian" *ngIf='fujin'>附近暂无门店!</p>
+      <ion-item-sliding class="item" *ngFor="let item of recently_shops.rows">
+        <ion-item (tap)="getShopDetails(item)" *ngIf="!item.itemshow">
+          <img [src]="storefaceurl_300+item.store.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+          />
+          <p class="item-header">{{item.store.storename}}</p>
+		       <div class="price"><span class="prices" *ngIf="!CVal">商品数:{{item.store.goodscount}}</span><span class="pricec" *ngIf="!item.cval">消费{{item.store.buycount}}次</span></div>
+		       <div class="item-right">{{item.store.distance}}</div>
+		       <div class="item-address" >{{item.store.storeaddr}}</div>
+		       
+          <!--<div class="item-header">{{item.store.storename}}</div>
+          <div class="item-address">{{item.store.storeaddr}}</div>
+          <div class="item-next"  (tap)="getShopDetails(item)">进去看看</div>
+          <div item-right>{{item.store.distance+'m'}}</div>
+          <div class="item-custom">{{item.store.custusercount}}</div>-->
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="onClickUnFolow(item)">
+            取消关注
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

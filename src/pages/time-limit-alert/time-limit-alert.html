@@ -1,0 +1,29 @@
+<ion-content class="yhcont" (tap)="present($event)">
+   <div class="model">
+     <!-- <p class="erweima" *ngIf='limit'><img [src]="erweimaImg"/></p> -->
+     <div class="erweima" *ngIf='limit'>
+      <qr-code [value]="contents" size="200" foreground="#fb6d07"></qr-code>
+    </div>
+     <div class="erweima" *ngIf='!limit'>
+        <P class="limit-p p1">还没到提货时间！</P>
+        <P class="limit-p">提货时间</P>
+        <P class="limit-p validDay">{{validDay}}</P>
+     </div>
+     
+     <p class="request center">
+       {{pageData.goodsRush.goodsname}}
+     </p>
+     <p class="money center">
+       {{'￥'+pageData.goodsRush.sellprice/100}}
+     </p> 
+     <p class="dingjin" *ngIf='dingjin'>{{yifu}}</p>
+    <p class="card_bottom center">{{pageData.storeInfo.storename}}</p>
+    <p class="card_dizhi center"><span class="dizhi">{{pageData.storeInfo.storeaddr}}</span></p>  
+    <p class="card_end">
+        <span>店员可能会电话与您确认订单</span>
+        <span>提货时请向店员出示此二维码</span>
+    </p>  
+   </div>
+     
+     
+</ion-content>

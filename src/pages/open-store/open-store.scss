@@ -1,0 +1,72 @@
+page-open-store {
+.slogan p{
+    font-size: 18px;
+    color: #333333;
+}
+.txt1{
+margin-top: 20px;
+margin-bottom: 14px;
+font-size: 14px;
+}
+.txt2{
+margin-bottom: 50px;
+font-size: 14px;
+}
+.details{
+    margin: 0 45px;
+    font-size: 14px;
+}
+.details p{
+    font-size: 14px;
+    color: #666666;
+    margin-top: 0px;
+    margin-bottom: 14px;
+    
+}
+
+.download{
+  padding:0px 43px;
+}
+.download button{
+  // width: 289px;
+  margin-top: 35px;
+  color: #ffffff;
+  background-color: #1e82d2;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.ios-download{
+    margin-top: 35px;    
+    text-align: center;
+}
+.ios-download a{
+    padding: 17px 70px;
+    width: 100%;
+text-decoration:none;
+color: #ffffff;
+background-color: #1e82d2;
+border-radius: 10px;
+font-size: 21px;
+}
+
+
+@media (max-device-width:320px){
+.txt1{
+margin-top: 10px;
+margin-bottom: 7px;
+}
+.txt2{
+margin-top: 0px;    
+margin-bottom: 20px;
+}
+.logo{
+    margin-top: 30px;
+}
+.download button{
+    margin-top: 18px;
+}
+.ios-download a{
+    padding: 10px 60px;
+    }
+}
+}

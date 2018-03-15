@@ -1,0 +1,138 @@
+<ion-header align-title="center" >
+  <ion-navbar color="orange" mode="ios" class="home-navbar">
+      <ion-title>店呼</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-right color="white">{{select_city}}</button>
+    </ion-buttons>
+    <div class="center-myInput">
+    	<img (tap)="onSearchInput($event)" [src] ="shousuo_img"/>    
+    </div>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="baycar()">
+        <img [src]="shopcar" class="img-header"/>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="myContent">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          refreshingSpinner="circles">
+        </ion-refresher-content>
+      </ion-refresher>
+        <ion-slides autoplay=5000 pager=true loop=true  class="center-banner">
+          <ion-slide [ngClass]="slide_img" *ngFor="let item of banners" (tap)="onBannerClick(item)">
+          <img class="banner_img" src={{item.imgsrc}} onerror="javascript:this.src='assets/img/banner_sides2.png';">
+          </ion-slide>
+        </ion-slides>
+        <div class="banner_bottoom">
+          <ion-row >
+            <ion-col class="youhui row_col" (tap)="goNextPage(wodeyouhui.id,youhui,qipao)" >
+                <img [src]="wodeyouhui.img">
+                <span>{{wodeyouhui.txt}}</span>
+                <i *ngIf='!wodeyouhui.youhuishow'>{{wodeyouhui.number}}</i>
+            </ion-col>
+            
+            <ion-col class="youhui row_col rush" (tap)="goNextPage(xianshiyouhui.id)" >
+                <img [src]="xianshiyouhui.img">
+                <span class="hot-text">{{xianshiyouhui.txt}}</span>
+            </ion-col>
+            <ion-col class="youhui row_col" (tap)="goNextPage(zhaopin.id)" >
+                <img [src]="zhaopin.img">
+                <span>{{zhaopin.txt}}</span>
+            </ion-col>
+          
+          </ion-row>
+        </div>
+
+        <div class="sign" *ngIf="systemMessages.length>0" >
+          <span class="gosign" (click)='goTurntable()'>
+            <img [src]='choujiang'>
+          </span>
+      
+          <p id='marquees' class="prize">
+            <marquee behavior="scroll" direction='up' contenteditable="true" loop='-1' scrollamount="2" width="100%">
+              <span *ngFor="let item of systemMessages">{{item.title}}<span class="coverUp"></span></span>
+            </marquee>
+            
+          </p>
+        </div>
+        <div class="xianshi-scroll">
+          <div class="xianshiyouhui">
+            <span (click)='notification()' class='xianshi col_weight'>限时优惠</span>
+            <span class='qidai' *ngIf='!scrollShow'>敬请期待！</span>
+            <span class='shengyu' *ngIf='scrolltimes'>剩余：{{rushtimes}}</span>
+            <span class="more" (tap)="gengduo()" *ngIf='scrollShow'>查看更多
+              <span class="jiantou">></span>
+            </span>
+          </div>
+          <ion-scroll scrollX="true" class="div-scroll" *ngIf='scrollShow'>
+            <div *ngFor="let item of rushlist" name="radio-button-on" class="scroll-item selectable-icon scroll-list">
+              <P>
+                <img (click)='goRush(item)' class="scrollX-img" [src]="goodsface_300+item.goodsface" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+                />
+              </P>
+              <P class="price">{{'￥'+item.sellprice/100}}</P>
+              <P class="unprice">{{'￥'+item.marketprice/100}}</P>
+            </div>
+          </ion-scroll>
+      
+        </div>
+    <ion-row class="ion_row">
+        <ion-col class="info-col ">
+          <div class="col_value col_row" (tap)='godelivery()'>
+            <P class="col_p1">3公里免费送上门</P>
+            <P class="">
+              <ion-row class="p-row">
+                  <ion-col>
+                    <img class="banner_img" [src]='there1' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+                    
+                  </ion-col>
+                  <span style="width:1px;"></span>
+                  <ion-col>
+                    <img class="banner_img" [src]='there2' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+                  </ion-col>
+                </ion-row>
+            </P>
+          </div>
+          <div class="col_key col_row" (tap)='goSignIn()'>
+            <P class="col_p1 col_p2">赚流量赢话费</P>
+            <P class="col_p3"><img class="banner_img" [src]='sy_banner' onerror="javascript:this.src='assets/img/banner_sides2.png';"></P>
+          </div>
+        </ion-col>
+        <ion-col class="info-col info_position" (tap)='myShopOnClick()'>
+          <div class="col_value col_p1 col_weight">精品年货</div>
+          <div class="col_key2">
+            <img class="banner_img" [src]='jinxuan' onerror="javascript:this.src='assets/img/banner_sides2.png';">
+          </div>
+        </ion-col>
+      
+      </ion-row>
+      <div class="cainixihuan_title">
+        <p class="Ilike">
+            <img class="icon_cainixihuan" [src]='icon_cainixihuan'>
+            <span class="cainixihuan">猜你喜欢</span>
+        </p>
+
+        
+        <span class="gengxin" (click)="guesslike()">换一批</span>
+        <img class="icon_gengxin" [src]= 'icon_gengxin' (click)="guesslike()">
+      </div>
+      <ion-grid class="guesslike">
+        <ion-row *ngFor="let grid of hotGoodRows">
+          <ion-col class="col guesslike-col" *ngFor="let item of grid" (tap)="goDetailPage(item)" col-6>
+            <div class="guesslikeinfo">
+              <img [src]="goodsface_900+item.goodsface" class="guesslikeimg" onerror="javascript:this.src='assets/img/bm_imge@2x.png';">
+              <p class="guesslikename p_margin">{{item.goodsname}}</p>
+              <p class="guesslikeprice p_margin">
+                <span class="saleprice">{{'￥'+item.sellprice/100}}
+                <span class="preprice" *ngIf="sha(item)" >{{'￥'+item.marketprice/100}}</span>
+                </span>
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

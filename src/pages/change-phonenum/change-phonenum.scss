@@ -1,0 +1,51 @@
+page-change-phonenum {
+ .slogan{
+        margin-top: 115px;
+        margin-bottom: 32px;
+    }
+    .submmit{
+        margin-top: 73px;
+    }
+    .item-inner{
+  border-bottom: 0px !important;
+}
+@media (max-device-width:320px){
+  .btnVerify {
+    color: #ffffff;
+    background-color: #fb6d07;
+    font-size: 12px !important;
+    border-radius: 6px;
+    padding: 14px 5px !important;
+    margin: 0 !important;
+    
+}
+.verify-label{
+  margin: 0 !important;
+}
+ion-input input{
+  margin: 0 !important;
+  width:100% !important;
+}
+.card{
+    border: 1.5px solid #c9c9c9;
+    border-radius: 10px;
+    margin: 0px 22px !important;
+    width: calc(100% - 44px) !important;
+    box-shadow:none !important;
+    overflow: hidden !important;
+  }
+  .disable-hover{
+      padding: 18px 15px !important;
+    }
+}
+
+    .span-needed{
+        margin: 8px 6px 8px 0 !important;
+    }
+    ion-label{
+     margin: 8px 4px 8px 0 !important;  
+    } 
+    .btnVerifyInable{
+        font-size: 13px !important;
+    }
+}

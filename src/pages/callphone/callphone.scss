@@ -1,0 +1,47 @@
+page-callphone {
+    .back-button{
+        display: none;
+    }
+    #header{
+        background: #444 !important;
+       
+
+    }
+    .back-button.show-back-button{
+        color: #fff !important;
+    
+    }
+    .toolbar-title-ios{
+         color: #fff !important;
+         font-weight: 100;
+    }
+    .callphone_bg{
+        background: url(../assets/img/dianhua_bg_imge@2x.png) no-repeat center;
+        background-size:cover;
+        height: 100%;
+        width: 100%;
+        // overflow: hidden;
+    }
+
+
+ 
+
+    .download_app{
+       display: block;
+        text-align: center;
+        line-height: 55px;
+        color: #ffffff;
+        // font-weight: 500;
+        background-color: #fb6d07;
+        height: 55px;
+        width: 88%;
+        border-radius: 8px;
+        font-size: 15px;
+        margin: auto !important;
+        position: absolute;
+        bottom: 50px;
+        left: 6%;
+        box-shadow: 2px 3px 3px #8c8383;
+    }
+    
+}

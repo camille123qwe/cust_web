@@ -1,0 +1,89 @@
+page-flux-charge {
+ .charge-item{
+        padding-left: 0;
+        height: 72px;
+    }
+    .charge-item ion-input{
+        position: absolute;
+        top: 0;
+        font-size: 26px;
+        color: #333333;
+        height: 45px;
+    }
+    .charge-item .text-input{
+        margin: 5px 0 0 0!important;
+        max-width: 11;
+    }
+    .charge-item ion-label{
+        position: absolute;
+        bottom: 10px;
+        font-size: 12px;
+    }
+   .charge-item .input-wrapper{
+        padding: 0 22px;
+    }
+    .grid{
+        padding: 0 17px!important;
+        padding-bottom: 20px!important;
+    }
+    ion-grid button{
+        width: 90%;
+        height: 100%;
+        margin: auto;
+    }
+    .charge-title{
+        font-size: 18px;
+        color: #fb6d07;
+    }
+    .charge-text{
+        padding: 0 22px;
+    }
+    .charge-text .item-inner{
+        border: none!important;
+    }
+    .charge-text p:first-child{
+        padding: 0!important;
+        font-size: 14px;
+        color: #666666;
+    }
+    .charge-text li{
+        //padding: 0 2em!important;
+        word-break: break-all;
+        white-space: normal;
+        font-size: 14px;
+        color: #666666;
+        text-align: justify;
+    }
+    .charge-text ion-label{
+        margin: 0;
+    }
+    .submit-button{
+        margin-top: 38px;
+        margin-bottom: 38px;
+        color: #ffffff;
+        background-color: #fb6d07;
+        border-radius: 10px;
+        font-size: 21px;
+    }
+    .item-button{
+        height: 56px!important;
+    }
+    .activated{
+        background-color: transparent!important;
+        color: #c9c9c9!important;
+    }
+      .activecolor{
+        border-color: #fb6d07;
+        color: #fb6d07!important;
+        background-color: transparent;
+    }
+    ion-alert .alert-wrapper .alert-message{
+          text-align: justify!important;
+          padding: 0 10px!important;
+          font-size: 13px;
+          color: inherit;
+     }
+     .test{
+         text-align: justify!important;
+     }
+}

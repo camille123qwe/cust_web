@@ -1,0 +1,105 @@
+<!--
+  Generated template for the OrderInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>订单详情</ion-title>
+     <ion-buttons end *ngIf="show_more">
+      <button ion-button icon-only (tap)="more()">
+        <img src="assets/img/icon_gengduoxuanze2x.png" class="img-more"/>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-item class="item-middle">
+        <div class="item-div orderNum">
+          <img src="assets/img/icon_bianhao@2x.png" item-left class="badge-unread" alt="*" />
+          <span>订单编号 : {{custgoodsorderid}}</span>
+        </div>
+    </ion-item>
+      <ion-item *ngIf="hasAddr" >
+          <p class="shipaddr"><span>收货地址</span><span (tap)='updateAddr()'>更换收货地址</span></p>
+            <div class="ship">
+              <img src="assets/img/icon_dizhi@2x.png" item-left  alt="*" />
+            <span class="shipname">{{yoursName}}</span>
+            <span class="shiptel">{{yoursPhone}}</span>
+          </div>
+          <p class="addr">{{yoursAddr}}</p>
+      </ion-item>
+      <ion-item *ngIf="!hasAddr" class="addship" (tap)="addship()">
+        <img src="assets/img/icon_xinzengdizhi@2x.png" item-left class="setting-img" >
+        <span>新增地址</span>
+    </ion-item>
+      <ion-item class="item-middle">
+        <div class="item-div">
+          <img src="assets/img/icon_dianpu@2x.png" item-left class="icon-img" alt="*" />
+          <marquee><span class="shopname">{{storeInfo.storeaddr}}</span></marquee>
+          <div id="link_box">
+          <img src="assets/img/icon_lianximaijia@2x.png" item-left class="icon-img tel" alt="*" />
+           <span class="lianxi">联系卖家</span>
+          </div>
+        </div>
+      </ion-item>
+      <ion-list class="orderlist">
+        <ion-item *ngFor="let item of custOrder2Goodses" >
+          <p class="goodsname">{{item.goodsInfo.goodsname}}</p>
+          <p class="goodsSpan" >×{{item.totalcount}}</p>
+          <p class="props_count">×{{item.totalprice/100}}</p>
+        </ion-item>
+        
+      </ion-list>
+      <ion-list class="orderlist">
+         <ion-item>
+          <p class="goodsname">配送费</p>
+          <p class="goodsSpan">￥{{expressmoney}}</p>
+        </ion-item>
+        <ion-item class="jiesuan">
+          <p class="goodsname">商品总额</p>
+          <p class="goodsCount">￥{{totalgoodsprice}}</p>
+        </ion-item>
+          <ion-item class="jiesuan mark">
+            <ion-label>备注 : </ion-label>
+            <ion-input placeholder="给商家留言"></ion-input>
+        </ion-item>
+      </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title *ngIf="zhifu" >
+      <p (tap)='payment()'>
+            选择支付方式
+      </p>
+    </ion-title>
+    <ion-title *ngIf="wancheng" class="wancheng">
+      <p>
+            订单已完成
+      </p>
+    </ion-title>
+    <div *ngIf="shouhuo" >
+      <div class="gray_footer">
+        <p >{{shouhuo_status}}</p>
+      </div>
+      <div class="orange_footer">
+        <p (tap)='querenshouhuo()'>
+              {{shouhuo_method}}
+        </p>
+      </div>
+    </div>
+     <div *ngIf="tuikuancuidan" >
+      <div class="gray_footer">
+        <p >{{tuihuo_status}}</p>
+      </div>
+      <div class="orange_footer">
+        <p (tap)='cuidan()'>
+              {{tuihuo_method}}
+        </p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

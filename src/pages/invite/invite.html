@@ -1,0 +1,16 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>邀请好友</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="content">
+<!--<div class="txt1">{{"成功邀请一位好友可获得"+ponits+"积分"}}</div>-->
+<div class="txt2">身份码：<span class="invite_code">{{invite_code}}</span></div>
+<!-- <img class="qrcode" [src]="qrcode"/> -->
+<qr-code [value]="qrcode" size="240" foreground="#fb6d07" mime="assets/img/gydh_logo@2x.png"></qr-code>
+<div class="txt3">请朋友扫一扫，注册成为店呼会员</div>
+<div class="txt3">即可获得60分钟免费通话时间</div>
+</ion-content>

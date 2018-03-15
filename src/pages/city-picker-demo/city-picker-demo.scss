@@ -1,0 +1,35 @@
+page-city-picker-demo {
+    .item-inner{
+        border-bottom: none!important;
+    }
+    .list-ios > .item-block{
+        border-bottom: 1px solid #eaeaea!important;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom-color: #eaeaea!important;
+    }
+    .label-ios-primary, .item-input .label-ios-primary, .item-select .label-ios-primary, .item-datetime .label-ios-primary{
+        font-size: 14px;
+        color: #444;
+        width: 70px;
+    }
+    textarea.text-input{
+        font-size: 14px;
+    }
+    .text-input{
+        font-size: 14px;
+    }
+    .save-button{
+        border-radius: 10px;
+    }
+    .item-ios .item-button{
+        height: 72px;
+    }
+    .ion_input{
+        display: none !important
+    }
+    .city-picker-text{
+        font-size: 14px !important;
+        padding-left: 16px;
+    }
+}

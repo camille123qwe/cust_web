@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar mode="ios">
+    <!--<ion-searchbar [(ngModel)]="myInput" placeholder="搜索门店" (ionInput)='onSearchInput($event)'
+      (ionFocus)='searchBarFocus()' mode='ios' color='orange' debounce=50>
+    </ion-searchbar>-->
+    <ion-buttons start>
+      <button ion-button (click)='close()' clear color='gray'>
+        <ion-icon name="ios-arrow-back" color='orange' class="back-btn"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-item class="mysearchbar">
+      <ion-label >
+        <ion-icon name="ios-search" color='gray'></ion-icon>
+      </ion-label>
+      <ion-input placeholder="搜索门店" clearInput=true  [(ngModel)]="myInput"></ion-input>
+    </ion-item>
+    <ion-buttons end class="search">
+      <button ion-button (click)='onSearchInput(myInput)' block clear color='orange'>
+        搜索
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content">
+  <ion-list *ngIf="!historyShow">
+    <ion-item class="item" *ngFor="let item of shop_list" (tap)="getShopDetails(item)">
+      <img [src]="storefaceurl_300+item.storeface" [ngClass]="img_class" item-left onerror="javascript:this.src='assets/img/bm_imge@2x.png';"
+      />
+      <div class="item-header">{{item.storename}}</div>
+      <div class="price"><span class="prices" [hidden]="Val_goodscount">商品数:{{item.goodscount}}</span><span class="pricec" [hidden]="Val_buycount">消费{{item.buycount}}次</span></div>
+      <div class="item-address">{{item.storeaddr}}</div>
+      <!--<div class="item-next">进去看看</div>-->
+
+      <!--<div class="item-custom">{{item.custusercount}}</div>-->
+      <div class="item-right">{{item.distance}}</div>
+    </ion-item>
+  </ion-list>
+
+  <!--搜索记录-->
+  <div *ngIf="historyShow" class="search-div">
+
+    <ion-toolbar class="park_toolbar">
+      <span start class="toolbar-title">最近搜过</span>
+    </ion-toolbar>
+    <ion-list class="search-list">
+      <ion-item (tap)="searchHistoryShop(item)" *ngFor="let item of historys">
+        <img src="assets/img/icon_lishi6@2x.png" item-left class="badge-history" alt="*" />
+        <h2>{{item}}</h2>
+      </ion-item>
+    </ion-list>
+    <div class="clear-history" (tap)='clearHistory()'>清除搜索记录</div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      收银台
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="dingdan_box" >
+		<p class="tab_p2">订单编号：{{goodsorderid}}</p>
+    <hr class="info_hr">
+		<div class="tab_p1">
+      <p *ngIf = "storeaddr">军昆数码商店</p>
+      <span class="store">商品总额</span> <span class="shouru">￥{{money}}</span>
+    </div>
+		<!-- <span class="right_span">完成</span> -->
+	</div>
+  <!-- <div class="goods_mingxi">
+		选择支付方式
+	</div> -->
+
+  <ion-list class="list1">
+    <!-- <ion-item>
+      <img src="assets/img/icon_weixin@2x.png" item-left class="setting-img">
+      <span class="setting-content" item-left>微信支付</span>
+      <ion-checkbox [(ngModel)]="weixin" item-right (click)='payment2()' ></ion-checkbox>
+    </ion-item>
+    <hr class="info_hr2"> -->
+    <ion-item>
+      <img src="assets/img/icon_zhifubao@2x.png" item-left class="setting-img">
+      <span class="setting-content" item-left>支付宝</span>
+      <ion-checkbox checked [(ngModel)]="zhifubao" item-right (click)='payment3()' ></ion-checkbox>
+    </ion-item>
+    
+  </ion-list>
+  <div class="login">
+    <button ion-button block clear (click)="zhifubaopay()">确定</button>
+  </div>
+</ion-content> 
+

@@ -1,0 +1,114 @@
+<ion-content class="content">
+  
+    <!-- 自己添加的图片设置-->
+    <div class="my_background">
+      <div class="setting">
+        <img [src]="setting" alt="个人设置" (tap)="shezhi()" onerror="javascript:this.src='assets/img/icon_gerenshezhi@2x.png';"
+
+        />
+      </div>
+  
+      <div class="portrait_bar" > <!-- (tap)="editPortrait()" -->
+        <img [src]="portrait" alt="头像" class="portrait"  onerror="javascript:this.src='assets/img/th_imge.png';"
+        />
+        <span class="user_name" (tap)='login()'>{{user_name}}</span>
+        <img [src]="qrcode" (tap)="editInfo()" alt="二维码" class="qrcode" />
+        <ion-icon name="ios-arrow-forward" class="portrait_next" id="portrait_next" (tap)="editInfo()" color="line-gray"></ion-icon>
+        <!--<p class="qrcode">
+        <span class="qiandao" (tap)="qiandao()">
+            签到
+        </span>
+        <span class="times">签到送通话时间</span>
+      </p>  -->
+  
+  
+      </div>
+    </div>
+  
+  
+    <ion-row >
+      <ion-col class="info-col info_position">
+        <div class="col_value">{{col3_value}}</div>
+        <div class="col_key">{{col3_key}}</div>
+        <span class="info_span"></span>
+      </ion-col>
+  
+      <ion-col class="info-col" (tap)='myShopOnClick()'>
+        <div class="col_value">{{col1_value}}</div>
+        <div class="col_key">{{col1_key}}</div>
+      </ion-col>
+      <!--<ion-col class="info-col">
+        <div class="col_value">{{col2_value}}</div>
+        <div class="col_key">{{col2_key}}</div>
+      </ion-col>-->
+  
+    </ion-row>
+  
+  <ion-list class="list1">
+    <ion-item (tap)="goNextPage('account')">
+      <img src="assets/img/icon_wodezhanghu@2x.png" item-left class="setting-img">
+      <span class="setting-content">我的账户</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>
+      <!-- <ion-item (tap)="goNextPage('address')">
+      <img src="assets/img/icon_wodedizhi@2x.png" item-left class="setting-img">
+      <span class="setting-content">我的地址</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item> -->
+    <!--<ion-item (tap)="goNextPage('order')">
+      <img src="assets/img/icon_wodedingdan@2x.png" item-left class="setting-img">
+      <span class="setting-content">我的订单</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item> -->
+    <ion-item (tap)="goNextPage('message')">
+      <img src="assets/img/icon_wodexiaoxi@2x.png" item-left class="setting-img">
+      <span class="setting-content">我的消息</span>
+      <ion-badge color="danger" class="badge" *ngIf="unread_show">{{unread_count}}</ion-badge>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>
+    <!--  <ion-item (tap)="goNextPage('flows')">
+      <img src="assets/img/icon_wodeliuliang@2x.png" item-left class="setting-img">
+      <span class="setting-content">我的流量</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>-->
+
+    <ion-item (tap)="goNextPage('voucher')">
+      <img src="assets/img/icon_wodedaijinquan@2x_1.png" item-left class="setting-img">
+      <span class="setting-content">我的优惠券</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>
+
+    <ion-item (tap)="goNextPage('shop')" class="last_item">
+      <img src="assets/img/icon_woyaokaidian@2x.png" item-left class="setting-img">
+      <span class="setting-content">我要开店</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>
+    <!--<ion-item (tap)="goNextPage('points')">
+      <img src="assets/img/icon_wodejifen@2x_1.png" item-left class="setting-img">
+      <span class="setting-content">我的积分</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>-->
+  </ion-list>
+
+  <ion-list class="list2">
+    <ion-item (tap)="goNextPage('invite')">
+      <img src="assets/img/icon_haoyouyaoqing@2x.png" item-left class="setting-img">
+      <span class="setting-content">好友邀请</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item>
+    <!-- <ion-item (tap)="goNextPage('setting')" class="last_item">
+      <img src="assets/img/icon_gerenshezhi@2x.png" item-left class="setting-img">
+      <span class="setting-content">个人设置</span>
+      <ion-icon name="ios-arrow-forward" item-right color="line-gray"></ion-icon>
+    </ion-item> -->
+    <!--<ion-item>
+      <a href="https://itunes.apple.com/cn/app/%E5%BA%97%E5%91%BC/id1192703467?mt=8">下载店呼商家版</a>
+    </ion-item>-->
+  </ion-list>
+  
+  
+   
+  
+    
+  
+  </ion-content>

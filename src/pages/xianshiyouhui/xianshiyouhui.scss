@@ -1,0 +1,184 @@
+page-xianshiyouhui {
+    .tishi{
+        display: block;
+        height:40px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        line-height: 40px;
+        font-size: 12px;
+        background: #efeff4;
+    }
+    .shijian{
+        color: red;
+        font-size: 15px;
+        display: inline-block;
+        padding: 0 3px;
+    }
+    .riqi{
+        display: inline-block; 
+        margin-left: 20px;
+        color: #888;
+    }
+    .list-ios{
+        margin: 0 ;
+    }
+    .item-ios{
+        padding-left: 4px !important; 
+    }
+    ion-item{
+        border-bottom: 1px solid #c8c7cc !important
+    }
+    .item img{
+        width: 111px;
+        height: 83px;
+        margin-right: 10px !important;
+    }
+    @media screen and (max-device-width: 320px) {
+        .item-header{
+            font-size:12px;
+        }
+    }
+   @media screen and (min-device-width:321px) and (max-device-width:375px) {
+        .item-header{
+            font-size:13px;
+        }
+    }
+    @media screen and (min-device-width:376px) {
+        .item-header{
+            font-size:13px;
+        }
+    }
+    .qidai{
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+        font-size: 20px;
+        color: #888;
+    }
+
+    .item-header{
+        max-height: 35px;
+        overflow: hidden;
+        white-space: normal;
+    }
+    .label-ios{
+        margin: 0 !important;
+    }
+    .qianggou{
+        display: inline-block;
+        font-size: 15px;
+        color: red;
+    }
+    .weikaishi{
+        font-size: 14px;
+        color: #333;
+    }
+    .mendian{
+        display: inline-block; 
+        font-size: 12px;
+        color: #888;
+    }
+    .item-address{
+        // padding: 2px 0;
+    }
+    .item-right{
+        height: 20px;
+        line-height: 20px;
+        margin-top:2px;
+    }
+    .juli{
+        display: inline-block; 
+        font-size: 12px;
+        color: #888;
+        float:right;
+        margin-top: 5px;
+    }
+    .qiang{
+        display: inline-block; 
+        width: 74px;
+        height:22px;
+        background: #fb6d07;
+        color: #fff;
+        float:right;
+        // margin-left: 10px;
+        line-height: 22px;
+        font-size: 13px;
+        border-radius: 3px;
+        text-align: center;
+    }
+    .yiqiang{
+        display: inline-block; 
+        width: 74px;
+        height:22px;
+        background: #c9c9c9;
+        color: #fff;
+        float:right;
+        // margin-left: 10px;
+        line-height: 22px;
+        font-size: 13px;
+        border-radius: 3px;
+        text-align: center;
+    }
+    .shichang{
+        display: inline-block;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+        font-size: 12px;
+        color:#666;
+        text-decoration: line-through;
+        float: left;
+    }
+    .kuaiqiang{
+        display: inline-block; 
+        width: 74px;
+        height: 12px;
+        font-size: 9px;
+        float:right;
+        background: #ffe8d7;
+        margin-top: 5px;
+        line-height: 12px;
+    }
+    .kuaiqiang i{
+        height: 100%;
+        display: inline-block;
+        background: #fb6d07;
+        text-align: center;
+        color: #333;
+        font-size: 10px !important;
+        height:100% !important;
+        line-height: 14px;
+        text-align: center;
+        font-style:normal;
+        
+    }
+
+    .kuaiqiang { 
+        position: relative; 
+        width: 74px;
+     } 
+    .kuaiqiang div { 
+        display: block;
+        position: relative;
+        background:#ffe8d7;/* 进度条背景颜色 */ 
+        color: #fb6d07;
+        height: 9px; /* 高度 */ 
+        line-height: 9px;
+        /* 必须和高度一致，文本才能垂直居中 */ 
+    } 
+    .geshu{
+        display: inline-block;
+        float: right;
+        margin-top: 14px;
+        font-size: 13px;
+    }
+    .item-inner{
+        border: 0 !important;
+    }
+
+    ion-col {
+        text-align: center;
+    }
+    
+}

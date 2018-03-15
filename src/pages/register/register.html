@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="slogan">
+    <p class="hi">HI,你好</p>
+  </div>
+
+  <ion-card class="card">
+    <ion-list>
+      <ion-item>
+        <span item-left class="span-needed">*</span>
+        <ion-label class="verify-label">手机号码：</ion-label>
+        <ion-input type="tel" #register_phone value=""></ion-input>
+      </ion-item>
+      <hr class="hr-login">
+
+      <ion-item>
+        <span item-left class="span-needed">*</span>
+        <ion-label item-left class="verify-label">验证码：</ion-label>
+        <ion-input type="tel" class="input-verify" #verify_code></ion-input>
+        <button ion-button item-right [ngClass]="code_css" (click)="getVerifyCode(register_phone.value)" [disabled]='code_disable'>{{code_txt}}</button>
+
+      </ion-item>
+      <hr class="hr-login">
+      <ion-item>
+        <span item-left class="span-needed">*</span>
+        <ion-label>用户名：</ion-label>
+        <ion-input type="text" value="" #username></ion-input>
+      </ion-item>
+
+      <!--<hr class="hr-login">-->
+      <!--<ion-item>
+        <span item-left class="span-needed">*</span>
+        <ion-label>密码：</ion-label>
+        <ion-input type="password" #register_psw value=""></ion-input>
+      </ion-item>
+      <hr class="hr-login">
+      <ion-item>
+        <span item-left class="span-needed"> </span>
+        <ion-label>邀请码：</ion-label>
+        <ion-input type="text" value="" #invitation_code></ion-input>
+      </ion-item>-->
+
+    </ion-list>
+  </ion-card>
+
+
+  <div class="login">
+    <button ion-button block clear (click)="register(register_phone.value,verify_code.value,username.value)">注册</button>
+  </div>
+</ion-content>

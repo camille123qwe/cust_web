@@ -1,0 +1,161 @@
+page-shop-car {
+    .scroll-content{
+        background: #efeff4 !important;
+        // position: relative;
+    }
+    ion-label {
+       
+        white-space: normal !important;
+    }
+    .item-block:first-child{
+        border-top:0 !important;
+    }
+    .store{
+        height: 40px;
+        border-bottom:1px solid #efeff4;
+        border-top:0 !important;
+        margin-top: 10px;
+        color: #666;
+        font-size: 16px;
+    }
+    .list-ios {
+        margin:0;
+    }
+    .setting_img{
+        width: 17px;
+        float: left;
+        margin: 3px 5px 0 0 !important;
+    }
+    
+    .store .label-ios{
+        margin: 0 !important;
+    }
+    .goods-item{
+        padding: 10px;
+    }
+    .goods-header{
+        font-size: 13px;
+        color: #333333;
+        // position: absolute;
+        // top: 18px;
+        max-height: 34px !important;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        z-index: 100000
+    }
+    .middle_img {
+    width: 110px;
+    height: 93px;
+    float: left
+    }
+    .item-ios{
+        padding-left: 8px;
+    }
+    .checkbox-ios{
+        margin: 8px 8px 8px 2px;
+    }
+    .xinxi{
+        margin-top: 16px;
+    }
+    .goods-description{
+        font-size: 12px;
+        color: #888888;
+        // margin-top: 34px;
+        padding: 6px 0;
+       
+    }
+    .goods-description span{
+        margin-left: 4px;
+    }
+    .checkbox-ios{
+        margin: 8px 8px 8px 2px !important;
+    }
+    .goods-sale{
+        font-size: 14px;
+        color: #0388dc;
+    }
+    .goods-cost{
+    font-size: 14px;
+    bottom: 16px;
+    }
+    .cost{
+        font-size: 15px !important;
+        color:  #fb3d07 !important;
+        display: inherit;
+    }
+    .count{
+        font-size: 14px;
+        color: #666;
+        display: inherit;
+        float: right;
+    }
+    .new-cost{
+     display: block;
+     color:#666;
+     font-size:12px;
+     
+    }
+    .marketprice{
+        text-decoration: line-through
+    }
+    .pay{
+       
+
+
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        line-height: 50px;
+        background: #fff;
+    }
+    .span_right{
+        width: 72%;
+        float: right;
+        
+    }
+    .fukuan{
+        display: inline-block;
+        float: right;
+        background: #fb6d07;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    .money{
+        // margin-right: 10px;
+        display: inline-block;
+        width: 60%; 
+        height: 100%;
+        text-align: center;
+    }
+    .shuliang{
+        display: inline-block;
+        width: 28%;
+        text-align: center;
+        color: #333;
+    }
+  
+    
+    ion-footer{
+       border-top: 1px solid #efeff4
+    }
+    .tishi{
+        margin-top: 55%;
+    }
+    .tishi p{
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        line-height: 30px;
+    }
+    .list-ios .item-block:last-child .item-inner{
+        border: none !important;
+        border:0 !important
+    }
+}

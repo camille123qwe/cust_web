@@ -1,0 +1,185 @@
+page-me {
+    .content{
+        background-color: #efeff4;
+    }
+    .setting{
+        height: 60px;
+        img{
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin-top: 33px;
+            margin-right: 17px;
+        }
+
+    }
+    .setting-img{
+        width: 20px;
+    }
+    .setting-content{
+        font-size: 15px;
+        color: #333333;
+    }
+
+    
+    .my_background{
+        background:url(../assets/img/wd_bg_imge@2x.png)no-repeat center;
+        background-size: 100% 100%;
+        height: 153px;
+    }
+    .portrait_bar{
+    
+        position: relative;
+        height: 76px;
+    }
+    .portrait{
+        margin: 19px 14px 9px 25px;
+        height: 53px;
+    
+    }
+    .user_name{
+        font-size: 18px;
+        color: #ffffff;
+        position: absolute;
+        top:33px;
+        padding-left: 9px;
+        text-align: center;
+    }
+
+      .qrcode{
+        position: absolute;
+        top:32px;
+        right:40px;
+        //padding-right: 19px;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+    
+    }
+
+      .portrait_next{
+        position: absolute;
+        right:15px;
+        padding:10px 5px 5px 5px !important;  
+        top:28px;      
+    }
+
+    .info-col info_position{
+        height: 60px;
+        position: relative;
+        
+    }
+
+    // .next_icon{
+    //     color:#c9c9c9;
+    //     font-size: 1px;
+    // }
+    .back-button{
+    display: none !important ;
+     }
+   ion-icon{
+       padding-top: 10px;
+   }
+    
+  
+    .times {
+        display: block;
+        position: absolute;
+        top:60px;
+        right:15px;
+        font-size: 12px;
+        color: #888;
+    }
+    .qiandao{
+        position: absolute;
+        top:19px;
+        right:15px;
+        border: 1px solid #fb6d07;
+        color: #fb6d07;
+        padding: 5px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+    #portrait_next{
+        margin-right: -5px;
+    }
+    
+  
+    .ion-ios-arrow-forward{
+        display:inline-block !important;
+         font-size: 14px !important;
+    }
+    
+    .info-col{
+        height: 60px;
+        text-align: center;
+        background-color:#ffffff; 
+        margin-bottom: 10px;   
+        position: relative;
+    }
+    .info_position{
+        position: relative;
+    }
+
+    .info_span{
+        position: absolute;
+        height: 19px;
+        width:2px; 
+        right: -1px;
+        top:21px;
+        background: #c9c9c9; 
+    }
+    .col_value{
+         margin-top: 3px;   
+        font-size: 14px;
+        color: #fb6d07;
+    }
+    .col_key{
+        margin-top: 6px;
+        font-size: 15px;
+        color: #333;
+    }
+
+    .list1{
+        margin: 0px;
+        
+    }
+    .list2{
+        margin-top: 10px;
+    }
+    .badge{
+        right: 45px;
+        position: absolute;
+    }
+    .my_sheet_btn{
+        font-size: 18px;
+        color: #333333;
+        background-color: red;
+    }
+    .toolbar-ios{
+        min-height: 52px;
+    }
+    .last_item{
+        border:none !important;
+    }
+    .list-ios > .item-block:last-child .item-inner{
+        border:none !important;
+    }
+    .list-ios > .item-block:first-child{
+       border-top:none !important;      
+    }
+.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width: 0 0 1px;
+}
+
+
+
+
+
+
+
+
+    
+    
+}
+    

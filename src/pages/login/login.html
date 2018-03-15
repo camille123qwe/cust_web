@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar [hideBackButton]='!loginAfter'>
+    <ion-title>登录</ion-title>
+    <ion-buttons end *ngIf="!loginAfter">
+      <button ion-button (click)='onClickTopRight()' clear color='blue'>
+        跳过
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content scroll="false">
+
+  <div class="slogan">
+    <img [src]="logoSrc" class="logo">
+    <p class="hi">HI,你好</p>
+  </div>
+  <!--<div class="card">
+    <div>
+      <label></label>
+    </div>
+
+  </div>-->
+
+  <!--<button ion-button class="login">登录</button>-->
+
+  <ion-card class="card">
+    <ion-list>
+      <ion-item>
+        <ion-label>手机号码：</ion-label>
+        <ion-input type="tel" [(ngModel)]="phone_value" maxlength="11" (keyup)="phoneChange()" ></ion-input>
+      </ion-item>
+      <hr class="hr-login">
+      <ion-item *ngIf="!isByCode">
+        <ion-label>密码：</ion-label>
+        <ion-input type="password" class="password" [(ngModel)]="password_value" placeholder="初始密码123456"></ion-input>
+      </ion-item>
+      
+      <ion-item *ngIf="isByCode" class="yzm_item">
+        <ion-label item-left class="verify-label">
+          验证码：
+        </ion-label>
+        <ion-input type="text" class="input-verify" [(ngModel)]="imgcode_value" maxlength="4"></ion-input>
+        <!--<button ion-button item-right [ngClass]="code_css" (click)="getVerifyCode()" [disabled]='code_disable'>{{code_txt}}</button>-->
+      </ion-item>
+      <div item-right class="img-code" (click)="refreshImgcode()" *ngIf="isByCode">
+        <img [src]="imgcode" alt="验证码">
+        <ion-icon name="ios-refresh"></ion-icon>
+    </div>
+      <hr class="hr-login" *ngIf="isByCode">
+      <ion-item *ngIf="isByCode">
+        <ion-label item-left class="verify-label">短信验证码：</ion-label>
+        <ion-input type="tel" class="input-verify" [(ngModel)]="code_value" maxlength="4"></ion-input>
+        <button ion-button item-right [ngClass]="code_css" (click)="getVerifyCode()" [disabled]='code_disable'>{{code_txt}}</button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+  <div padding>
+    <a id="lost-psw" ng-href="#" (click)="changeType()">{{login_type}}</a>
+    <a id="sign-up" ng-href="#" (click)="goRegisterPage()">新用戶注册</a>
+  </div>
+  <!-- <ion-img width="180" height="80" src={{imgcode}}></ion-img>
+  <ion-img width="180" height="80" [src]='imgcode'></ion-img>
+  <img src="" id="testlogin"> 
+  <p id="test">{{imgcode}}</p>
+  <a [href]="imgcode">测试测试</a> -->
+  <div class="login">
+    <button ion-button block clear (click)="onLogin()">登录</button>
+  </div>
+</ion-content>

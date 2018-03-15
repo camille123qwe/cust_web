@@ -1,0 +1,175 @@
+page-book-service {
+    .scroll-content{
+        background: #f2f2f2;
+        font-size: 14px!important;
+        color: #333!important;
+        border-color: #eaeaea;
+        margin-bottom: 0!important;
+    }
+    .item-inner{
+        border: none!important;
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+        border-color: #eaeaea!important;
+    }
+    .item-service{
+        height: 40px;
+        //border-bottom: solid 1px #eaeaea;
+        font-size: 14px!important;
+        color: #333!important;
+    }
+    .item-service:first-child{
+        margin-bottom: 5px;
+    }
+    .serviceName span{
+        padding-left: 13px;
+    }
+    .list-ios > .item-block{
+        border-bottom: solid 1px #eaeaea!important;
+        border-top: solid 1px #eaeaea!important;
+    }
+    .list-ios > .item-block:first-child{
+        border-bottom: none!important;
+    }
+
+    .list-ios{
+        margin: 0!important;
+    }
+    .add-ship{
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .add-ship span{
+        font-size: 14px;
+        padding-left: 2px;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        color:#666;
+    }
+    .adds{
+        color: #fb6d07;
+    }
+    .timeSelect .item-ios{
+        font-size: 14px;
+    }
+    .item{
+        color: #444;
+    }
+    .mark{
+        font-size: 14px;
+        height: 40px;
+        border-bottom: solid 1px #eaeaea;
+    }
+    .mark-ship{
+        margin-top: 5px !important;
+    }
+    .item-textarea{
+        height: 75px;
+        margin-bottom: 45px;
+    }
+    .times-item:last-child{
+        border-top: none!important;
+    }
+    .item-block{
+        min-height: 0!important;
+    }
+    .badge-item{
+        width: 20px!important;
+    }
+    .item-ios p{
+        font-size: 14px;
+        color: #333;
+    }
+    .item-ios p:last-child{
+        color: #666;
+        margin-top: 4px;
+    }
+    .footer-ios p{
+        float: left;
+    }
+    .footer-ios .toolbar-ios:first-child .toolbar-background-ios{
+        border-top: 1px solid #eaeaea !important;
+    }
+    .toolbar-ios{
+        padding: 0!important;
+        min-height: 0!important;
+        font-size: 15px;
+    }
+      .footer-ios p:first-child{
+          width:60%;
+          text-align: center;
+      }
+      .footer-ios p:first-child span{
+          color:#fb6d07;
+      }   
+    .footer-ios p:last-child{
+        background: #fb6d07;
+        color: #fff;
+        text-align: center;
+        width:40%;
+        height:50px;
+        line-height:50px;
+        margin:0!important;
+    
+    }
+     @media screen and (max-device-width: 320px) {
+        .ion-label{
+             white-space: normal!important;
+        }
+
+     .addr_div p{
+            width: 250px;
+            word-wrap:break-word;
+            word-break: break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+   @media screen and (min-device-width:321px) and (max-device-width:375px) {
+         .ion-label{
+             white-space: normal!important;
+            }
+
+     .addr_div p{
+            width: 300px;
+            word-wrap:break-word;
+            word-break: break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    
+
+.one input[type='radio']{  
+    margin-left: 2px;  
+    margin-right: 2px;  
+    display: none;  
+}  
+.one input[type='radio']+label:before{  
+    content: '';  
+    display: inline-block;  
+    width: 20px;  
+    height: 20px;  
+    margin-right: 14px;  
+    border-radius: 100%;  
+    vertical-align: middle;  
+    background-image: url(../assets/img/icon_meixuanzhong@2x.png);  
+    background-size:cover;
+    background-repeat:no-repeat ;
+}  
+.one input[type='radio']:checked+label:before{  
+    background-image: url(../assets/img/icon_xuanzhong@2x.png); 
+    background-size:cover;
+    background-repeat:no-repeat ; 
+}  
+.name-padding{
+    padding-left: 19px !important;
+}
+.addr_label{
+    float: left;
+}
+.addr_div{
+    float: right;
+}
+}
